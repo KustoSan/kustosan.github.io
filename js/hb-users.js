@@ -13,6 +13,9 @@ function getUrlVars() {
 
 /*################ Get user by url var ################*/
 $(document).ready(function () {
+
+	$.ajaxSetup({ cache: false });
+
     $("#search").ready(function () {
 
         var user = getUrlVars()["user"];
@@ -68,7 +71,6 @@ $(document).ready(function () {
 		                }
 		            }
 	        	}
-        })
-    	
+        })    	
 	})
 });
