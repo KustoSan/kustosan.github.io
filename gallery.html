@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kusto! - Anime Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is Kusto's website, an anime and games fan.">
+    <meta name="author" content="Kusto-san">
+
+    <!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+    <!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+    <!--script src="js/less-1.3.3.min.js"></script-->
+    <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css?<?php echo date(Mdms); ?>" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=cyrillic,cyrillic-ext,latin,greek-ext,greek,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/jquery.lazyload.js"></script>
+
+    <script>
+        $(document).ready(function popupimgs() {
+            $('.popup, .mfp-img').magnificPopup({type: 'image'});
+        });
+    </script>
+
+    <script>
+        $(document).ready(function popupvids() {
+            $('.popupw').magnificPopup({type: 'iframe'});
+        });
+    </script>
+
+    <script>
+        $("img").error(function hide() {
+            $(this).hide();
+        });
+    </script>
+
+
+</head>
+
+<body>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54af1f634daeb2da"
+        async="async"></script>
+<nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                class="icon-bar"></span><span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="/">Kusto-san</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="social.html">Social</a>
+            </li>
+            <li class="active">
+                <a href="gallery.html">Gallery</a>
+            </li>
+            <li>
+                <a href="anime.html">Anime</a>
+            </li>
+            <li>
+                <a href="music.html">Music</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hummingbird <strong class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="hb.html">Users Library</a>
+                    </li>
+                    <li>
+                        <a href="compare.html">Following compt.</a>
+                    </li>
+                    <li>
+                        <a href="compare2.html">Followers compt.</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sugoi stuff <strong
+                        class="caret"></strong></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCkY8vOIA7p4pwUFnystmyfw"><i
+                                class="fa fa-youtube-play fa-fw"></i> Kustundo Plays</a>
+                    </li>
+                    <li>
+                        <a target="_blank"
+                           href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VKD5MW7SPZWA8"><i
+                                class="fa fa-paypal fa-fw"></i> Donate!</a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="//joseprubik.tk"> <i class="fa fa-user fa-fw"></i> Josep Rubik</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a target="_blank" href="old/index.html"><i class="fa fa-globe fa-fw"></i> Old Website</a>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+<div class="container" id="containerg" name="top">
+
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/blackrock3.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/blackrock3.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Black Rock Shooter <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/another.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/another.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Another <span class="resolution">(1920x1080)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/angelbeats.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/angelbeats.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Angel Beats <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/noel.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/noel.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Sora no Method <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/jibril.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/jibril.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">No Game no Life <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/bakemono.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/bakemono.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Bakemonogatari <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/katanagatari.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/katanagatari.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Katanagatari <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/gcrown.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/gcrown.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Guilty Crown <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/twintails.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/twintails.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Twintails ni Narimasu <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/yuna.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/yuna.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Yuuki Yuuna <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/titan.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/titan.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Shingeki no Kyojin <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/steinsgate.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/steinsgate.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Steins Gate <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/nekopara.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/nekopara.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Neko Works <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/niconico.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/niconico.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Love Live <span class="resolution">(1920x1080)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/psychopass.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/psychopass.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Psycho Pass <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/shana.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/shana.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Shakugan no Shana <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/fma.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/fma.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Full Metal Alchemist <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/sao.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/sao.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Sword Art Online <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/toradora2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/toradora2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Toradora! <span class="resolution">(1920x1080)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/miku4.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/miku4.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Hatsune Miku <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/holo.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/holo.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Spice and Wolf <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/holo2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/holo2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Spice and Wolf <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/blackrock.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/blackrock.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Black Rock Shooter <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/blackrock2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/blackrock2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Black Rock Shooter <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/kuroneko.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/kuroneko.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Kuroneko <span class="resolution">(1920x1080)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv4.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/pixiv4.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/yuuki-asuna.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/yuuki-asuna.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Yuuki & Asuna <span class="resolution">(2560x1440)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/bgtogame.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x800" data-original="css/thumbnails/bgtogame.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Togame <span class="resolution">(1440x800)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/michiru.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2048x1152" data-original="css/thumbnails/michiru.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Michiru Matsushima <span class="resolution">(2048x1152)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/zetsuen.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2000x1376" data-original="css/thumbnails/zetsuen.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Zetsuen no Tempest <span class="resolution">(2000x1376)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/oreimo2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1451x1024" data-original="css/thumbnails/oreimo2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Oreimo <span class="resolution">(1451x1024)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/chaika.jpeg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1600x1315" data-original="css/thumbnails/chaika.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Chaika Gaz <span class="resolution">(1600x1315)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/mhmm.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1280x760" data-original="css/thumbnails/mhmm.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Mahou Shoujo Madoka Magi <span
+                            class="resolution">(1280x760)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/mhmm2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/mhmm2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Mahou Shoujo Madoka Magi <span
+                            class="resolution">(1920x1080)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/homura.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1200" data-original="css/thumbnails/homura.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Akemi Homura <span class="resolution">(1920x1200)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/homura2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1889x1062" data-original="css/thumbnails/homura2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Akemi Homura <span class="resolution">(1889x1062)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/amagifire.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1366x768" data-original="css/thumbnails/amagifire.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Amagi Brilliant Park <span class="resolution">(1366x768)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/amagileaf.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1366x768" data-original="css/thumbnails/amagileaf.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Amagi Brilliant Park <span class="resolution">(1366x768)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/amagiwater.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1366x768" data-original="css/thumbnails/amagiwater.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Amagi Brilliant Park <span class="resolution">(1366x768)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/amagiwind.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1366x768" data-original="css/thumbnails/amagiwind.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Amagi Brilliant Park <span class="resolution">(1366x768)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv5.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1500x936" data-original="css/thumbnails/pixiv5.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(1500x936)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv6.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1440x900" data-original="css/thumbnails/pixiv6.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(1440x900)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv7.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1200x672" data-original="css/thumbnails/pixiv7.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(1200x672)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/aboutme3.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2500x3000" data-original="css/thumbnails/aboutme3.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(2500x3000)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/toradora.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1600x1000" data-original="css/thumbnails/toradora.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Christmas Toradora! <span class="resolution">(1600x1000)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/miku.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/miku.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Hatsune Miku <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/kirino.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2559x1439" data-original="css/thumbnails/kirino.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Kirino Kousaka <span class="resolution">(2559x1439)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/shinobu.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/shinobu.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Shinobu Oshino <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/miku2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2000x1415" data-original="css/thumbnails/miku2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Hatsune Miku <span class="resolution">(2000x1415)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/vocaloid.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1247" data-original="css/thumbnails/vocaloid.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Vocaloid <span class="resolution">(1920x1247)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv1.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2388x1510" data-original="css/thumbnails/pixiv1.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(2388x1510)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/asd.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="3000x1687" data-original="css/thumbnails/asd.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Soul Worker <span class="resolution">(3000x1687)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1800x1081" data-original="css/thumbnails/pixiv2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pixiv Artwork <span class="resolution">(1800x1081)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/miku3.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1600x900" data-original="css/thumbnails/miku3.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Hatsune Miku <span class="resolution">(1600x900)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/pixiv3.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1078x741" data-original="css/thumbnails/pixiv3.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Pivix Image <span class="resolution">(1078x741)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/taiga.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1680x1050" data-original="css/thumbnails/taiga.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Taiga - Toradora! <span class="resolution">(1680x1050)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+    <div class="row clearfix" id="grow">
+        <div class="col-md-3 column">
+            <a href="css/imgs/mekaku.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1920x1080" data-original="css/thumbnails/mekaku.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Mekaku City Actors <span class="resolution">(1920x1080)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/oreimo.png" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="1600x900" data-original="css/thumbnails/oreimo.png"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Oreimo <span class="resolution">(1600x900)</span></figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/shinobu2.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="2560x1440" data-original="css/thumbnails/shinobu2.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Shinobu Oshino <span class="resolution">(2560x1440)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+        <div class="col-md-3 column">
+            <a href="css/imgs/chocola-vanilla.jpg" class="popup">
+                <figure class="g-figures">
+                    <img class="g-images" alt="889x547" data-original="css/thumbnails/chocola-vanilla.jpg"
+                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <figcaption class="g-figcaptions">Chocola & Vanilla <span class="resolution">(889x547)</span>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+
+        <div id="topcontrol" title="Scroll Back to Top"
+             style="position: fixed; bottom: 13px; right: 15px; opacity: 1; cursor: pointer;">
+            <a href="#top">
+                <img src="css/imgs/up.png" style="width:40px; height:40px">
+            </a>
+        </div>
+
+    </div>
+    <p class="copyright">
+        All images and videos remain property of their original owners. Site & design © kusto.tk 2015
+    </p>
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $(".g-images").lazyload({
+            effect: "fadeIn",
+        });
+    });
+</script>
+
+
+</body>
+</html>

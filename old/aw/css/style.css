@@ -1,0 +1,285 @@
+
+
+
+
+body {
+	background-color: white;
+	background-image: url('imgs/wallpaper.jpg');
+	background-repeat: no-repeat;
+	background-size: 110%;
+	background-attachment: fixed;
+	margin-top: 17.5px;
+	margin-left: 17.5px;
+
+}
+
+
+body {
+	font: 14px/1.4 arail;
+}
+
+.photo-grid {
+	margin: -25px -39.6px 0px;
+	width: 416px;
+	height: 261px;
+	text-align: center;	   
+}
+ 
+.photo-grid a {
+
+	margin: 4em;
+	width: 0px;
+	height: -0px;
+
+}
+ 
+.photo-grid img {
+	display: block;
+	height: auto;
+	width: 416px;
+	
+        
+}
+
+
+ 
+.photo-grid figure {
+	height: 261px;
+	overflow: hidden;
+	position: absolute;
+	width: 416px;
+	
+
+
+}
+ 
+.photo-grid figcaption {
+	background: rgba(0,0,0,0.8);
+	color: white;
+	display: table;
+	height: 262px;
+	width: 416px;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+
+
+}
+ 
+.photo-grid figcaption p {
+	display: table-cell;
+	font-size: 1.5em;
+	position: relative;
+	top: 0px;
+	width: 700px;
+	vertical-align: middle;
+}
+
+.photo-grid a:hover figcaption {
+	opacity: 1;
+	
+}
+
+
+
+
+
+
+div#contacto {
+
+	position: relative;
+	height: 303px;
+	width: 265px;
+	overflow: hidden;
+        padding-bottom: 10px;
+	background-color: gray;
+	-webkit-box-shadow: inset 0px 0px 30px -2px rgba(0, 0, 0, 1);
+	-moz-box-shadow:    inset 0px 0px 30px -2px rgba(0, 0, 0, 1);
+	box-shadow:         inset 0px 0px 30px -2px rgba(0, 0, 0, 1);
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+
+}
+
+div#contacto img {
+
+	position: absolute;
+	height: 313px;
+	width: 334px;
+	opacity: 1;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+	font-family: 'Ubuntu', sans-serif;
+	pointer-events: none;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+
+}
+
+div#contacto p {
+
+	padding-left: 10px;
+	padding-right: 10px;
+	color: black;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+div#contacto h3 {
+	
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+}
+	
+
+div#contacto:hover img {
+
+	opacity: 0;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+}
+
+
+
+
+div#quienes {
+	position: absolute;
+	left: 291px;
+	height: 314px;
+	width: 560px;
+	overflow: hidden;
+	background-color: gray;
+	font-size: 12.6px;
+	font-family: 'Ubuntu', sans-serif;
+	-webkit-box-shadow: inset 0px 0px 30px -2px rgba(0, 0, 0, 1);
+	-moz-box-shadow:    inset 0px 0px 30px -2px rgba(0, 0, 0, 1);
+	box-shadow:         inset 0px 0px 30px -2px rgba(0, 0, 0, 1);
+
+
+
+
+}
+
+div#quienes img {
+	width: 559px;
+	pointer-events: none;
+}
+
+
+div#quienes p {
+	padding-left: 20px;
+	padding-right: 20px;
+	color: black;
+	font-family: 'Ubuntu', sans-serif;
+	
+}
+
+
+div#quienes img {
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+}
+
+div#quienes:hover img {
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+
+}
+
+div#quienes h3 {
+	
+	padding-left: 20px;
+	color: white;
+	padding-right: 20px;
+}
+
+
+
+div#render {
+	position: fixed;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 0;
+	margin: 0;
+	bottom: -7px;
+	left: 455px;
+	pointer-events: none;
+        width: 160%;
+        height: auto;
+}
+
+
+div#render img {
+	height: 50%;
+	width: 50%;
+	content: url("imgs/render.png");
+
+}
+
+
+footer p {
+	position: relative;
+	color: white;
+	top: 25px;
+	margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

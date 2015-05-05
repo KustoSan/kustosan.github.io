@@ -1,0 +1,1050 @@
+
+body {
+    background-color: #111;
+    margin-bottom: 90px;
+}
+
+.table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
+    content: " \25B4\25BE" 
+}
+
+.table tbody tr:hover {
+    background-color: #d9edf7;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #F4F4F4;
+}
+
+.table tbody tr:nth-child(odd):hover {
+    background-color: #d9edf7;
+}
+
+.copyright {
+    color: #888;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 0 0 6px black;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #428bca;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+    background-color: #428BF1;
+}
+
+.dropdown-menu > .active > a {
+    background-color: #428bca;
+}
+
+.dropdown-menu > .active > a:hover {
+    background-color: #428BF1;
+}
+
+.nav .caret {
+    border-top-color: black;
+}
+
+.navbar-nav > li:hover {
+    background-color: #333;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+    -webkit-transition: .2s ease-in;
+    transition: .2s ease-in;
+}
+
+/*
+.dropdown-menu {
+	background-color: #333
+}
+
+
+.dropdown-menu>li>a:hover {
+	background-color: gray;
+}
+
+ul.dropdown-menu li a {
+	color: #999;
+}
+
+.dropdown-menu .divider {
+	background-color: #222;
+}
+*/
+.container {
+    position: relative;
+    padding-top: 35px;
+    background-color: #222;
+    -webkit-border-radius: 0 0 7px 7px;;
+    -moz-border-radius: 0 0 7px 7px;;
+    border-radius: 0 0 7px 7px;;
+    top: 50px;
+}
+
+#containerg, #containera {
+    padding-left: 18px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+nav {
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border: none;
+    box-shadow: 0 1px 3px #111;
+}
+
+.navbar-brand {
+    color: #428bca !important;
+}
+
+.col-md-3 {
+    padding-right: 20px;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+/*::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #cecece;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #111;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+}*/
+
+#disqus_thread {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 0;
+}
+
+.fa-heart {
+    color: red;
+}
+
+.fa-home {
+    color: #428bca;
+}
+
+.waifu {
+    left: 50%;
+    transform: translate(-400%)!important;
+    position: absolute;
+    bottom: 70px;
+    height: 18px;
+    font-size: 20px!important;
+}
+
+.home {
+    left: 50%;
+    transform: translate(330%)!important;
+    position: absolute;
+    bottom: 70px;
+    height: 18px;
+    font-size: 20px!important;
+}
+
+.fa-twitter {
+    color: #55acee;
+}
+
+.fa-facebook-official {
+    color: #3a5795
+}
+
+.hb-span {
+    color: orange;
+}
+
+.fa-star {
+    color: gold;
+}
+
+.fa-link {
+    color: orange;
+}
+
+/* ####### About me styling here #######
+######################################### */
+
+.am {
+    width: 100%;
+    position: relative;
+}
+
+.jumbotron {
+    height: auto;
+    margin-bottom: 0;
+    border-radius: 0 !important;
+    padding-right: 145px !important;
+    padding-left: 145px !important;
+}
+
+.jumbotron p {
+    font-size: 15px;
+}
+
+.jumbotron h1 {
+    font-size: 30px;
+}
+
+.container .jumbotron {
+    background-color: #222;
+    color: #e6e6e6;
+    -webkit-box-shadow: 0 0 1px 0 black;
+    -moz-box-shadow: 0 0 1px 0 black;
+    box-shadow: 0 0 1px 0 black;
+}
+
+#aboutme-container, #hb-container {
+    background-color: #111;
+    top: 51px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#aboutme-container .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#divjumbo {
+    width: 100%;
+    padding: 0;
+}
+
+.fam {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+#divam {
+    width: 100%;
+    padding: 0;
+    border-bottom: 7px solid gray;
+}
+
+.pam {
+    margin-top: 10px;
+    float: right;
+    color: #888;
+    text-shadow: 1px 1px black;
+}
+
+.star-span {
+    color: gold !important;
+}
+
+h1 {
+    color: #999 !important;
+}
+
+.site-branding {
+    color: #999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 20px;
+    position: absolute;
+    z-index: 2;
+    height: 190px;
+    width: 250px;
+    background-color: #1d1d1d;
+}
+
+.branding-title {
+    text-align: center;
+    font-weight: 600;
+    opacity: 1;
+    color: white !important;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+.branding-line {
+    width: 100px;
+    border: 1.9px solid #333;
+}
+
+.branding-description {
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+hr {
+    border: 1.9px solid #333;
+}
+
+/* ####### Social styling here #######
+#########################################*/
+
+#___person_0 iframe {
+
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 10px 0 black;
+    -moz-box-shadow: 0 0 10px 0 black;
+    box-shadow: 0 0 10px 0 black;
+}
+
+#twitter-widget-0 {
+
+    height: 375px;
+    width: 810px !important;
+    -webkit-box-shadow: 0 0 10px 0 black;
+    -moz-box-shadow: 0 0 10px 0 black;
+    box-shadow: 0 0 10px 0 black;
+}
+
+#social-jumbo {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+}
+
+/* ####### Gallery styling here #######
+#########################################*/
+
+#grow, #arow {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 35px;
+}
+
+.g-figures {
+    overflow: hidden;
+    height: 150px;
+    width: 250px;
+    -webkit-box-shadow: 0 0 15px 0 black;
+    -moz-box-shadow: 0 0 15px 0 black;
+    box-shadow: 0 0 15px 0 black;
+}
+
+.g-images {
+    min-height: 150px;
+    width: 250px;
+
+}
+
+a {
+    border: none;
+    color: gray;
+}
+
+.g-figcaptions {
+    background-color: black;
+    height: 22px;
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 3px;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    transition: all 300ms;
+    -webkit-transition-delay: all 100ms;
+    -moz-transition-delay: all 100ms;
+    transition-delay: all 100ms;
+}
+
+figure:hover .g-figcaptions {
+    opacity: 0.9;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    transition: all 300ms;
+    -webkit-transition-delay: all 100ms;
+    -moz-transition-delay: all 100ms;
+    transition-delay: all 100ms;
+}
+
+span.resolution {
+    font-style: italic;
+}
+
+/* ####### Anime styling here #######
+#########################################*/
+
+.anime-figures {
+    overflow: hidden;
+    height: 180px;
+    width: 250px;
+    webkit-box-shadow: 0 0 15px 0 black;
+    -moz-box-shadow: 0 0 15px 0 black;
+    box-shadow: 0 0 15px 0 black;
+}
+
+img.webm, .brightness {
+    min-height: 350px;
+    width: 250px;
+    bottom: 45px;
+    position: relative;
+}
+
+.brightness {
+    position: absolute;
+    background: black;
+    bottom: 0;
+    height: 30px !important;
+    opacity: 0;
+    min-height: 180px;
+    z-index: 1;
+}
+
+.anime-figcaptions, .play-figcaptions {
+    background-color: #111;
+    height: 25px;
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    font-weight: 100;
+    text-align: center;
+    font-size: 13px;
+    padding-top: 5px;
+    color: #e6e6e6;
+    opacity: 0.9;
+}
+
+.play-figcaptions {
+    width: 55px;
+    left: 115px;
+    top: 75px;
+    outline: 2px solid #555;
+    opacity: 0;
+}
+
+.play-figcaptions:hover {
+    outline: 2px solid #428bca;
+}
+
+.anime-figures:hover .play-figcaptions {
+    opacity: 1;
+
+}
+
+.anime-figures:hover .brightness {
+    opacity: 0.5;
+}
+
+.mfp-iframe {
+    width: 100%;
+}
+
+.mfp-iframe-scaler {
+    padding-top: 0 !important;
+    height: inherit !important;
+}
+
+/* ####### Music styling here #######
+#########################################*/
+
+iframe.music {
+    -webkit-box-shadow: 0 0 15px 0 black;
+    -moz-box-shadow: 0 0 15px 0 black;
+    box-shadow: 0 0 15px 0 black;
+}
+
+iframe.snake {
+    width: 820px;
+    height: 560px;
+    position: relative;
+    bottom: 40px;
+    left: 155px;
+    margin-bottom: -50px;
+}
+
+/* ####### HB styling here #######
+#########################################*/
+
+#hb-container {
+    padding-bottom: 35px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.hb-avatar {
+    width: 130px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+    top: 70px;
+    border-radius: 70px;
+    z-index: 2;
+}
+
+.hb-cover {
+    position: relative;
+    height: 400px;
+    width: auto !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.cover-opacity {
+    position: absolute;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    width: 100% !important;
+    z-index: 1;
+}
+
+.hb-username {
+    position: relative;
+    color: white;
+    top: 70px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.hb-username a {
+    color: #428bca;
+}
+
+.hb-bio {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    max-width: 700px;
+    font-family: ubuntu;
+    top: 110px;
+    text-align: center;
+    height: 50px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.hb-waifu-husbando {
+    position: relative;
+    text-align: right;
+    color: white;
+    bottom: 89px;
+    font-size: 16px;
+    left: 50%;
+    transform: translate(-160%);
+    width: 140px;
+    font-family: ubuntu;
+}
+
+.hb-location {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    width: 140px;
+    height: 22px;
+    bottom: 121px;
+    text-align: left;
+    left: 50%;
+    transform: translate(60%);
+    font-family: ubuntu;
+}
+
+.hb-website {
+    position: relative;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    bottom: 65px;
+    font-family: ubuntu;
+}
+
+.hb-website {
+    color: #fff;
+}
+
+.hb-website:hover {
+    color: orange;
+}
+
+#hb-header {
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#hb-header p {
+    text-shadow: 0 0 6px black;
+}
+
+.form-title {
+    text-align: right;
+    margin: 0;
+    margin-right: 20px;
+    position: relative;
+    top: 5px;
+    color: white;
+}
+
+.form-title a {
+    color: orange;
+}
+
+.hb-input {
+    position: relative;
+    width: 260px;
+    float: right;
+    margin-right: 65px;
+    z-index: 2;
+    top: 10px;
+    display: flex;
+}
+
+.hb-input p {
+    width: auto;
+    color: #999;
+    text-align: right;
+}
+
+.hb-input a {
+    color: orange !important;
+}
+
+.library-container {
+    margin-bottom: 25px;
+    background-color: #111;
+}
+
+.library-container .col-md-3 {
+    margin-bottom: 35px;
+}
+
+.library-container .g-figures {
+    min-height: 362px;
+    height: auto;
+}
+
+.library-container .g-figcaptions {
+    opacity: 0.9;
+    height: auto;
+    font-size: 16px;
+
+}
+
+#h1-library {
+    margin-top: 0;
+    margin-bottom: 40px;
+    margin-left: 15px;
+    font-size: 25px;
+    color: white!important;
+    max-width: 700px;
+    font-family: ubuntu;
+}
+
+#hb-biobox {
+    position: relative;
+    bottom: 245px;
+    height: 0;
+    z-index: 2;
+}
+
+#hb-info {
+    position: relative;
+    bottom: 130px;
+    height: 0;
+    z-index: 2;
+}
+
+.label {
+    font-weight: normal;
+    font-size: inherit;
+    padding: 1px 6px 3px;
+}
+
+#usersearch {
+  margin-left: -50px;
+}
+
+
+/* ####### Screen sizing style 1200px #######
+#########################################*/
+
+@media (max-width: 1200px) {
+
+    .am {
+        min-height: 322px !important;
+        overflow: hidden;
+    }
+
+    .g-figcaptions {
+        width: 200px !important;
+    }
+
+    .library-container .g-figcaptions {
+        top: inherit !important;
+    }
+
+    .g-figures {
+        width: 200px !important;
+        height: 120px !important;
+    }
+
+    .library-container .g-figures {
+        height: auto !important;
+    }
+
+    .anime-figures {
+        width: 200px !important;
+        height: 280px !important;
+    }
+
+    .anime-figcaptions {
+        width: 200px !important;
+    }
+
+    img.webm, .brightness {
+        width: 200px !important;
+        min-height: 280px !important;
+        bottom: 0;
+    }
+
+    img.g-images {
+        width: 200px;
+        min-height: 120px;
+    }
+
+    .container .jumbotron {
+        padding: 40px;
+    }
+
+    .jumbotron h1 {
+        font-size: 29px;
+    }
+
+    .jumbotron p {
+        font-size: 14px;
+    }
+
+    .anime-figcaptions {
+        font-size: 13px;
+    }
+
+    iframe.music {
+        width: 430px;
+        height: 245px;
+    }
+
+    #twitter-widget-0 {
+        width: 610px !important;
+    }
+
+}
+
+/* ####### Screen sizing style 991px #######
+#########################################*/
+
+@media (max-width: 991px) {
+
+    nav {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .col-md-3 {
+        display: inline-block;
+        width: 170px;
+    }
+
+    .g-figures {
+        width: 150px !important;
+        height: 100px !important;
+    }
+
+    .resolution {
+        display: none;
+    }
+
+    .library-container .g-figures {
+        height: auto !important;
+    }
+
+    img.g-images {
+        /*float: left !important;*/
+        width: 150px;
+        min-height: 100px;
+        -webkit-box-shadow: 0 0 15px 0 black;
+        -moz-box-shadow: 0 0 15px 0 black;
+        box-shadow: 0 0 15px 0 black;
+    }
+
+    .fam {
+
+        overflow: visible;
+        height: auto !important;
+    }
+
+    .am {
+        min-height: 0 !important;
+        width: 100% !important;
+        right: 0 !important;
+    }
+
+    .container .jumbotron {
+    }
+
+    #grow {
+        margin-bottom: 20px;
+    }
+
+    .g-figcaptions {
+        width: 150px !important;
+        font-size: 13px !important;
+    }
+
+    #divjumbo {
+        left: 0;
+    }
+
+    #divam {
+        right: 0;
+    }
+
+    #arow {
+        margin-bottom: 0;
+        margin-left: 15px;
+    }
+
+    .anime-figures {
+        width: auto !important;
+        height: 200px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .anime-figcaptions {
+        width: 135px !important;
+        padding-top: 5px;
+        font-size: 9px;
+        bottom: 35px !important;
+        height: 20px !important;
+    }
+
+    img.webm, .brightness {
+        width: 100% !important;
+        min-height: 100% !important;
+    }
+
+    .brightness {
+        display: none;
+    }
+
+    iframe.music {
+        width: 665px;
+        height: 365px;
+        margin-bottom: 40px;
+    }
+
+    #twitter-widget-0 {
+        width: 390px !important;
+    }
+
+    #h1-library {
+        font-size: 35px;
+    }
+
+    .hb-input {
+        margin-right: 40px;
+    }
+
+}
+
+/* ####### Screen sizing style 768px #######
+#########################################*/
+
+@media (max-width: 768px) {
+    nav {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #containerg {
+        width: 620px;
+        padding-left: 20px;
+    }
+
+    #containera {
+        width: 630px;
+        padding: 20px;
+    }
+
+    .jumbotron {
+        height: auto !important;
+        padding-right: 40px !important;
+        padding-left: 40px !important;
+    }
+
+    #aboutme-container .jumbotron {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    .col-md-3 {
+        width: 285px;
+        margin-bottom: 40px;
+    }
+
+    .g-figures {
+        width: 250px !important;
+        height: 150px !important;
+    }
+
+    .library-container .g-figures {
+        height: auto !important;
+    }
+
+    .anime-figures {
+        height: 350px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .anime-figcaptions {
+        width: 250px !important;
+        height: 25px !important;
+        bottom: 0 !important;
+        font-size: 13px;
+    }
+
+    .g-figcaptions {
+        width: 250px !important;
+        font-size: 16px !important
+    }
+
+    #grow {
+        margin-bottom: 0;
+
+    }
+
+    #arow {
+        margin-left: 10px;
+    }
+
+    img.g-images {
+        width: 250px;
+        min-height: 150px;
+    }
+
+    .copyright {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+
+    iframe.music {
+        width: 530px;
+        height: 300px;
+    }
+
+    #___person_0 {
+        left: 145px;
+    }
+
+    #twitter-widget-0 {
+        width: 545px !important;
+    }
+
+    .site-branding {
+        transform: translate(-50%, -50%) scale(0.7, 0.7);
+    }
+
+    #h1-library {
+        font-size: 30px;
+    }
+
+    .hb-input {
+        margin-right: 35px;
+        margin-top: -60px;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media (max-width: 636px) {
+
+    #containerg, #containera {
+        width: 325px;
+        padding-left: 18px;
+    }
+
+    iframe.music {
+        width: 240px;
+        height: 137px;
+    }
+
+    #___person_0 {
+        left: -5px;
+    }
+
+    #twitter-widget-0 {
+        left: -1px;
+        width: 550px !important;
+    }
+
+    .site-branding {
+        transform: translate(-50%, -50%) scale(0.5, 0.5);
+    }
+
+    #arow {
+        margin-left: 5px;
+    }
+
+    #h1-library {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 540px) {
+    .hb-waifu-husbando {
+        transform: translate(-150%);
+    }
+
+    .hb-location {
+        transform: translate(40%);
+    }
+}
+
