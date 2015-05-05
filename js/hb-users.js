@@ -69,11 +69,6 @@ $(document).ready(function () {
 		            }
 	        	}
         })
-
-            .error(function (data) {
-                alert("Oops! Something is wrong. I'll take you back.");
-                window.history.back();
-            })
     	
 	})
 });
