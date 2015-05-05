@@ -27,7 +27,7 @@ $(document).ready(function () {
         }
 
 		$.jsonp({
-				url: 'http://hummingbird.me/api/v1/users/' + user, // any JSON endpoint
+				url: 'http://hummingbird.me/api/v1/users/' + user + '?callback=?', // any JSON endpoint
 				jsonpSupport: true, // if URL above supports JSONP (optional)
 				success: function (data){
 		            document.getElementById('usersearch').value = data.name;
