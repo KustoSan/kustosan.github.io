@@ -236,7 +236,7 @@ a:hover {
 }
 
 #aboutme-container, #hb-container {
-    background-color: #111;
+    background-color: #222;
     top: 51px;
     width: 100%;
     margin: 0;
@@ -648,7 +648,7 @@ iframe.snake {
 
 .library-container {
     margin-bottom: 25px;
-    background-color: #111;
+    background-color: #222;
 }
 
 .library-container .col-md-3 {
