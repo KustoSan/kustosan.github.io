@@ -1,5 +1,5 @@
 body {
-  background-color: #111;
+  background-color: #191919;
   margin-bottom: 90px;
 }
 
@@ -239,7 +239,7 @@ a:hover {
 }
 
 #aboutme-container, #hb-container {
-  background-color: #222;
+  background-color: #191919;
   top: 51px;
   width: 100%;
   margin: 0;
