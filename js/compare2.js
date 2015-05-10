@@ -14,9 +14,10 @@ $(document).ready(function() {
   });
   var user = getUrlVars()["user"];
   var page = 1;
-  if (user != undefined) {
+  if (user != undefined && user !=  "") {
     $('#updateBtn').html('<i class="fa fa-spinner fa-pulse"></i> Loading compatibilities...');
     $('.gprogress').html(user + "'s followers anime taste compatibility")
+    $('#btnExport').removeAttr("disabled")
 
     do {
       // Get follow json
@@ -46,6 +47,14 @@ $(document).ready(function() {
     }
     while (page != "100")
   }
+
+  $("#btnExport").click(function() {
+    $("#comp").table2excel({
+      name: "Worksheet Name",
+      filename: "followed" //do not include extension
+    });
+  });
+
 });
 
 // When all Ajax requests stop
