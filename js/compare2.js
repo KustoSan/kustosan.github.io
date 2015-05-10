@@ -56,32 +56,31 @@ $(document).ready(function() {
   $("#btnExport").click(function() {
     $("#comp").table2excel({
       name: "Worksheet Name",
-      filename: "followed" //do not include extension
+      filename: "Followers" //do not include extension
     });
   });
 
-});
+  $("#exportTxt").click(function() {
+    text = "";
+    for (var i = 0; i <= $('.countTd').length; i++) {
+      namu = $('.countNamu a:eq(' + i + ')').html();
+      percent = $('.countPercent:eq(' + i + ')').html();
+      pretext = (i + 1) + ': ' + namu + " - " + percent;
+      text = text + '\n' + pretext;
 
-$("#exportTxt").click(function() {
-  text = "";
-  for (var i = 0; i <= $('.countTd').length; i++) {
-    namu = $('.countNamu a:eq(' + i + ')').html();
-    percent = $('.countPercent:eq(' + i + ')').html();
-    pretext = (i + 1) + ': ' + namu + " - " + percent;
-    text = text + '\n' + pretext;
-
-    if (i == $('.countTd').length) {
-      var blob = new Blob([text], {
-        type: "text/plain;charset=utf-8;",
-      });
-      saveAs(blob, "Followed.txt");
+      if (i == ($('.countTd').length - 1)) {
+        var blob = new Blob([text], {
+          type: "text/plain;charset=utf-8;",
+        });
+        saveAs(blob, "Followers.txt");
+      }
     }
-  }
-})
+  })
+
+});
 
 // When all Ajax requests stop
 $(document).ajaxStop(function() {
-
   $("#updateBtn").html('<i class="fa fa-check"></i> Enjoy! ^o^');
   $(".dedo").click(function() {
     for (var i = 0; i <= $('.countTd').length; i++) {
