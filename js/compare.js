@@ -1,12 +1,16 @@
 // Get URL vars
 function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-      vars[key] = value;
-    });
-    return vars;
-  }
-  // Start everything if user is set
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+    vars[key] = value;
+  });
+  return vars;
+}
+
+var pretext = "";
+var text = "";
+
+// Start everything if user is set
 $(document).ready(function() {
 
   $.ajaxSetup({
@@ -14,10 +18,11 @@ $(document).ready(function() {
   });
   var user = getUrlVars()["user"];
   var page = 1;
-  if (user != undefined && user !=  "") {
+  if (user != undefined && user != "") {
     $('#updateBtn').html('<i class="fa fa-spinner fa-pulse"></i> Loading compatibilities...');
     $('.gprogress').html(user + "'s followed users anime taste compatibility")
     $('#btnExport').removeAttr("disabled")
+    $('#exportTxt').removeAttr("disabled")
 
     do {
       // Get follow json
@@ -31,8 +36,8 @@ $(document).ready(function() {
 
             $.getJSON('https://hbird-cmp-node.herokuapp.com/compatibility/anime?user1=' + user + '&user2=' + val.id + '&callback=asd', function(data) {
 
-              $('#members').append('<tr id="ded"><td class="countTd"><b></b></td><td><a style="color:#428bca;" href="https://hummingbird.me/users/' +
-                val.id + '" target="_blank"</a>' + val.id + '</td><td>' + data.percent + '</td><td>Stalked</td></tr>');
+              $('#members').append('<tr id="ded"><td class="countTd"><b></b></td><td class="countNamu"><a style="color:#428bca;" href="https://hummingbird.me/users/' +
+                val.id + '" target="_blank">' + val.id + '</a></td><td class="countPercent">' + data.percent + '</td><td>Stalked</td></tr>');
               $('th').removeAttr("data-sorted")
               $('th').removeAttr("data-sorted-direction")
               Sortable.init();
@@ -66,4 +71,22 @@ $(document).ajaxStop(function() {
       $('.countTd:eq(' + i + ')').html('#' + (i + 1) + ' |');
     }
   })
+
+  $("#exportTxt").click(function() {
+    text = "";
+    for (var i = 0; i <= $('.countTd').length; i++) {
+      namu = $('.countNamu a:eq(' + i + ')').html();
+      percent = $('.countPercent:eq(' + i + ')').html();
+      pretext = (i + 1) + ': ' + namu + " - " + percent;
+      text = text + '\n' + pretext;
+
+      if (i == $('.countTd').length) {
+        var blob = new Blob([text], {
+          type: "text/plain;charset=utf-8;",
+        });
+        saveAs(blob, "Followed.txt");
+      }
+    }
+  })
+
 });

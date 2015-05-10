@@ -36,12 +36,11 @@
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript" src="js/compare2.js"></script>
   <script type="text/javascript" src="js/moment.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
   <script src="js/jquery.table2excel.js"></script>
   <script src="js/sortable.js"></script>
   <script src="js/URI.js"></script>
   <script src="js/jsonp.js"></script>
-
-
 
   <script>
     (function(i, s, o, g, r, a, m) {
@@ -161,8 +160,9 @@
           <!-- /input-group -->
         </form>
       </div>
-      <div class="col-lg-3">
-        <button disabled id="btnExport" type="button" class="btn btn-success"><i class="fa fa-download"></i> Export it!</button>
+      <div class="col-lg-8">
+        <button disabled id="btnExport" type="button" class="btn btn-success"><i class="fa fa-download"></i> Export to .XLS</button>
+        <button disabled id="exportTxt" type="button" class="btn btn-default"><i class="fa fa-download"></i> Export to .TXT</button>
       </div>
       <!-- /.col-lg-6 -->
     </div>
