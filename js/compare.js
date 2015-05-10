@@ -62,6 +62,24 @@ $(document).ready(function() {
 
 });
 
+
+$("#exportTxt").click(function() {
+  text = "";
+  for (var i = 0; i <= $('.countTd').length; i++) {
+    namu = $('.countNamu a:eq(' + i + ')').html();
+    percent = $('.countPercent:eq(' + i + ')').html();
+    pretext = (i + 1) + ': ' + namu + " - " + percent;
+    text = text + '\n' + pretext;
+
+    if (i == $('.countTd').length) {
+      var blob = new Blob([text], {
+        type: "text/plain;charset=utf-8;",
+      });
+      saveAs(blob, "Followed.txt");
+    }
+  }
+})
+
 // When all Ajax requests stop
 $(document).ajaxStop(function() {
 
@@ -71,22 +89,4 @@ $(document).ajaxStop(function() {
       $('.countTd:eq(' + i + ')').html('#' + (i + 1) + ' |');
     }
   })
-
-  $("#exportTxt").click(function() {
-    text = "";
-    for (var i = 0; i <= $('.countTd').length; i++) {
-      namu = $('.countNamu a:eq(' + i + ')').html();
-      percent = $('.countPercent:eq(' + i + ')').html();
-      pretext = (i + 1) + ': ' + namu + " - " + percent;
-      text = text + '\n' + pretext;
-
-      if (i == $('.countTd').length) {
-        var blob = new Blob([text], {
-          type: "text/plain;charset=utf-8;",
-        });
-        saveAs(blob, "Followed.txt");
-      }
-    }
-  })
-
 });
