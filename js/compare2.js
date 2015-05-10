@@ -56,7 +56,7 @@ $(document).ready(function() {
   $("#btnExport").click(function() {
     $("#comp").table2excel({
       name: "Worksheet Name",
-      filename: "Followers" //do not include extension
+      filename: user + " Followers" //do not include extension
     });
   });
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
         var blob = new Blob([text], {
           type: "text/plain;charset=utf-8;",
         });
-        saveAs(blob, "Followers.txt");
+        saveAs(blob, user + " Followers.txt");
       }
     }
   })
