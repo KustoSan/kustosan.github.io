@@ -31,14 +31,6 @@ body {
   text-shadow: 0 0 6px black;
 }
 
-.navbar-header {
-  width: 100%;
-}
-
-.navbar-collapse {
-  width: 100%;
-}
-
 .navbar-inverse .navbar-nav > .active > a {
   background-color: #428bca;
 }
@@ -105,14 +97,13 @@ ul.dropdown-menu li a {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-
-.navbar {
+/*.navbar {
   position: fixed;
   width: 100%;
   top: 0;
   border: none;
   box-shadow: 0 1px 3px #111;
-}
+}*/
 
 .navbar-brand {
   color: #428bca !important;
@@ -240,7 +231,6 @@ a:hover {
 
 #aboutme-container, #hb-container {
   background-color: #191919;
-  top: 51px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -752,10 +742,6 @@ iframe.snake {
 #########################################*/
 
 @media (max-width: 991px) {
-  nav {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .col-md-3 {
     display: inline-block;
     width: 170px;
@@ -844,10 +830,6 @@ iframe.snake {
 #########################################*/
 
 @media (max-width: 768px) {
-  nav {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
   #containerg {
     width: 620px;
     padding-left: 20px;
