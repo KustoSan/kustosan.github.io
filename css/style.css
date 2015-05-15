@@ -630,7 +630,7 @@ iframe.snake {
 
 .library-container {
   margin-bottom: 25px;
-  background-color: #222;
+  background-color: transparent;
 }
 
 .library-container .col-md-3 {
