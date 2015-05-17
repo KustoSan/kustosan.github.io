@@ -31,62 +31,41 @@
   <link rel="shortcut icon" href="img/logo.png">
   <link rel="stylesheet" href="css/magnific-popup.css">
 
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/scripts.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="js/jquery.magnific-popup.js"></script>
-  <script src="js/jquery.magnific-popup-video.js"></script>
-
-  <script>
-    $("img").error(function hide() {
-      $(this).hide();
-    });
-  </script>
-
-  <script>
-    $(document).ready(function() {
-      $('.popupw').magnificPopup({
-        type: 'iframe'
-      });
-    });
-  </script>
-
-
 </head>
 
 <body>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54af1f634daeb2da" async="async"></script>
+
   <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container clearfix">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Kusto-san</a>
+        <a class="navbar-brand" href="#">K<span style="color: gray;">!</span></a>
       </div>
-
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
             <a href="index.html">Home</a>
           </li>
           <li>
-            <a href="social.html">Social</a>
-          </li>
-          <li>
-            <a href="gallery.html">Gallery</a>
-          </li>
-          <li class="active">
-            <a href="anime.html">Anime</a>
-          </li>
-          <li>
             <a href="music.html">Music</a>
           </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Anime<strong class="caret"></strong></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="gallery.html">Gallery</a>
+              </li>
+              <li>
+                <a href="anime.html">Anime openings</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hummingbird <strong class="caret"></strong></a>
             <ul class="dropdown-menu">
@@ -101,33 +80,27 @@
               </li>
             </ul>
           </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sugoi stuff <strong
-
-                        class="caret"></strong></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sugoi stuff <strong class="caret"></strong></a>
             <ul class="dropdown-menu">
               <li>
-                <a target="_blank" href="old/index.html"><i class="fa fa-globe fa-fw"></i> Old Website</a>
+                <a target="_blank" href="https://twitter.com/KustoSan"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
               </li>
               <li>
-                <a target="_blank" href="https://www.youtube.com/channel/UCkY8vOIA7p4pwUFnystmyfw"><i class="fa fa-youtube-play fa-fw"></i> Kustundo Plays</a>
+                <a target="_blank" href="https://github.com/KustoSan/kustosan.github.io"><i class="fa fa-github fa-fw"></i> Github Repo</a>
               </li>
               <li>
-                <a target="_blank" href="//joseprubik.tk"> <i class="fa fa-user fa-fw"></i> Josep Rubik</a>
-              </li>
-              <li class="divider">
+                <a target="_blank" href="https://gist.github.com/KustoSan"><i class="fa fa-github-alt fa-fw"></i> My gists</a>
               </li>
               <li>
-                <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VKD5MW7SPZWA8"><i class="fa fa-paypal fa-fw"></i> Donate!</a>
+                <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VKD5MW7SPZWA8"><i class="fa fa-paypal fa-fw"></i> Donate</a>
+              </li>
             </ul>
-            </li>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-
   <div class="container container-k" id="containera">
 
     <div class="row clearfix" id="arow">
@@ -252,6 +225,24 @@
     </p>
   </div>
 
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/active.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/jquery.magnific-popup.js"></script>
+  <script src="js/jquery.magnific-popup-video.js"></script>
+  <script>
+    $("img").error(function hide() {
+      $(this).hide();
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('.popupw').magnificPopup({
+        type: 'iframe'
+      });
+    });
+  </script>
   <script src="js/jquery.lazyload.js" type="text/javascript"></script>
   <script type="text/javascript" charset="utf-8">
     $(function() {
@@ -261,20 +252,22 @@
     });
   </script>
   <script>
-    $(window).bind(
-      $.browser.opera ? 'unload' : 'beforeunload',
-      function() {
-        //display image container
-        $('.progress-indicator').css('display', 'block');
-        //set a little timeout and force re-displaying of the image
-        //this can work around IE behavior, that 'freezes'
-        //animations during a submit
-        setTimeout(function() {
-          $('.progress-indicator > img').attr('src',
-            $('.progress-indicator > img').attr('src') + '?reload');
-        }, 50);
-      });
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-58583433-1', 'auto');
+    ga('send', 'pageview');
   </script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54af1f634daeb2da" async="async"></script>
 
 </body>
 
