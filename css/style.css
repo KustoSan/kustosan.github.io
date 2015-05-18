@@ -65,7 +65,7 @@ body {
 }
 
 .navbar-nav > li {
-  min-height: 55px;
+  max-height: 50px;
 }
 
 .navbar-nav > li:hover {
