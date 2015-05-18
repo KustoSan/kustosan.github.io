@@ -64,12 +64,8 @@ body {
   border-top-color: black;
 }
 
-.navbar-nav > li {
-  max-height: 50px;
-}
-
 .navbar-nav > li:hover {
-    border-bottom: 5px solid #0084b4;
+  border-bottom: 5px solid #0084b4;
   transition: all .15s ease-in-out;
   background-color: transparent;
 }
@@ -788,6 +784,12 @@ iframe.snake {
 }
 /* ####### Screen sizing style 768px #######
 #########################################*/
+
+@media (min-width: 768px) {
+  .navbar-nav > li {
+    max-height: 50px;
+  }
+}
 
 @media (max-width: 768px) {
   #containerg {
