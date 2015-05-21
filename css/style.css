@@ -81,7 +81,6 @@ body {
 }
 
 #containerg, #containera {
-  padding-left: 18px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -89,10 +88,6 @@ body {
 
 .navbar-brand {
   color: #428bca !important;
-}
-
-.col-md-3 {
-  padding-right: 20px;
 }
 
 a:hover {
@@ -586,7 +581,8 @@ iframe.snake {
 
 .library-container {
   margin-bottom: 25px;
-  background-color: transparent;
+  background-color: #303030;
+  border-radius: 6px !important;
 }
 
 .library-container .col-md-3 {
@@ -602,16 +598,6 @@ iframe.snake {
   opacity: 0.9;
   height: auto;
   font-size: 16px;
-}
-
-#h1-library {
-  margin-top: 0;
-  margin-bottom: 40px;
-  margin-left: 15px;
-  font-size: 25px;
-  color: white!important;
-  max-width: 700px;
-  font-family: ubuntu;
 }
 
 #hb-biobox {
@@ -632,10 +618,6 @@ iframe.snake {
   font-weight: normal;
   font-size: inherit;
   padding: 1px 6px 3px;
-}
-
-#usersearch {
-  margin-left: -50px;
 }
 /* ####### Screen sizing style 1200px #######
 #########################################*/
@@ -775,9 +757,6 @@ iframe.snake {
   #twitter-widget-0 {
     width: 390px !important;
   }
-  #h1-library {
-    font-size: 35px;
-  }
   .hb-input {
     margin-right: 40px;
   }
@@ -859,9 +838,6 @@ iframe.snake {
   #twitter-widget-0 {
     width: 545px !important;
   }
-  #h1-library {
-    font-size: 30px;
-  }
   .hb-input {
     margin-right: 35px;
     margin-top: -60px;
@@ -872,7 +848,6 @@ iframe.snake {
 @media (max-width: 636px) {
   #containerg, #containera {
     width: 325px;
-    padding-left: 18px;
   }
   iframe.music {
     width: 240px;
@@ -887,9 +862,6 @@ iframe.snake {
   }
   #arow {
     margin-left: 5px;
-  }
-  #h1-library {
-    font-size: 22px;
   }
 }
 

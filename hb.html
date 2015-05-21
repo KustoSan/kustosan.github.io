@@ -109,35 +109,54 @@
 
     <div class="container container-k library-container" id="containerg">
 
-      <p class="form-title">Write a <a href="//hummingbird.me">Hummingbird</a> sugoi username!</p>
-      <form class="hb-input input-group">
-        <input type="text" id="usersearch" class="form-control" name="user" placeholder="HB Username">
-        <select class="form-control" name="status" placeholder="Library status">
-          <option value='' disabled selected style='display:none;'>Library status</option>
-          <option>completed</option>
-          <option>on-hold</option>
-          <option>dropped</option>
-          <option>currently-watching</option>
-          <option>plan-to-watch</option>
-        </select>
-        <span class="input-group-btn">
-          <button type="submit" id="search" value="Search" class="btn btn-default">Go!</button>
-        </span>
+      <form>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="input-group">
+              <input type="text" id="usersearch" class="form-control" name="user" placeholder="Username ...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Go!</button>
+              </span>
+            </div>
+            <!-- /input-group -->
+
+          </div>
+          <div class="col-lg-3">
+            <select class="form-control" name="status" placeholder="Library status">
+              <option value='' disabled selected style='display:none;'>Library status</option>
+              <option>completed</option>
+              <option>on-hold</option>
+              <option>dropped</option>
+              <option>currently-watching</option>
+              <option>plan-to-watch</option>
+            </select>
+          </div>
+          <!-- /.col-lg-6 -->
+        </div>
       </form>
 
-      <h1 id="h1-library"></h1>
-
-      <div id="hb-library"></div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="well well-sm">
+            <h3 id="h1-library"></h3>
+          </div>
+          <div id="hb-library"></div>
+        </div>
+      </div>
 
     </div>
 
-    <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 13px; right: 15px; opacity: 1; cursor: pointer;">
-      <a href="#top">
-        <img src="css/imgs/up.png" style="width:40px; height:40px">
-      </a>
-    </div>
 
-    <p class="copyright">All images and videos remain property of their original owners. Site & design © kusto.tk 2015</p>
+
+  </div>
+
+  <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 13px; right: 15px; opacity: 1; cursor: pointer;">
+    <a href="#top">
+      <img src="css/imgs/up.png" style="width:40px; height:40px">
+    </a>
+  </div>
+
+  <p class="copyright">All images and videos remain property of their original owners. Site & design © kusto.tk 2015</p>
   </div>
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
