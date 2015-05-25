@@ -20,8 +20,9 @@ body {
   background-color: #d9edf7;
 }
 
-.adownload, .adownload:hover {
+.adownload, .adownload:hover, .adownload:focus {
   color: #fff;
+  text-decoration: none;
 }
 
 .copyright {

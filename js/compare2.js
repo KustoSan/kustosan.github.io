@@ -53,13 +53,6 @@ $(document).ready(function() {
     while (page != "100")
   }
 
-  $("#btnExport").click(function() {
-    $("#comp").table2excel({
-      name: "Worksheet Name",
-      filename: user + " Followers" //do not include extension
-    });
-  });
-
   $("#exportTxt").click(function() {
     text = "";
     for (var i = 0; i <= $('.countTd').length; i++) {
