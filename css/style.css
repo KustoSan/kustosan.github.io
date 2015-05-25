@@ -20,6 +20,10 @@ body {
   background-color: #d9edf7;
 }
 
+.adownload, .adownload:hover {
+  color: #fff;
+}
+
 .copyright {
   color: #888;
   position: fixed;
