@@ -42,7 +42,7 @@ $(document).ready(function() {
               $('th').removeAttr("data-sorted-direction")
               Sortable.init();
               for (var i = 0; i <= $('.countTd').length; i++) {
-                $('.countTd:eq(' + i + ')').html('#' + (i + 1) + ' |');
+                $('.countTd:eq(' + i + ')').html('#' + (i + 1));
               };
             })
           })
@@ -77,7 +77,7 @@ $(document).ajaxStop(function() {
   $("#updateBtn").html('<i class="fa fa-check"></i> Enjoy! ^o^');
   $(".dedo").click(function() {
     for (var i = 0; i <= $('.countTd').length; i++) {
-      $('.countTd:eq(' + i + ')').html('#' + (i + 1) + ' |');
+      $('.countTd:eq(' + i + ')').html('#' + (i + 1));
     }
   })
 });
