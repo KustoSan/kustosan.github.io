@@ -82,7 +82,7 @@ $(document).ready(function() {
               rewatched = "No";
             }
             $('#hb-library').append('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><a target="_blank" href="' + library[i].anime.url + '"><div class="thumbnail"><img src="' + library[i].anime.cover_image + '"></a><div class="caption"><h4>' +
-              library[i].anime.title + '</h4><p>Watched ' + library[i].episodes_watched + ' of ' + library[i].anime.episode_count + ' episodes</p><p>Rewatched: ' + rewatched + '</p></div></div></a></div>');
+              library[i].anime.title + '</h4><p>Watched ' + library[i].episodes_watched + ' of ' + library[i].anime.episode_count + ' episodes</p><p>Rewatched: ' + rewatched + '</p></div></div></div>');
             i++;
           }
         }
