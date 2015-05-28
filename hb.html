@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Kusto! - User library</title>
+  <title>Kusto! - Anime library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="This is Kusto's website, an anime and games fan.">
   <meta name="author" content="Kusto-san">
@@ -32,7 +32,7 @@
 
 </head>
 
-<body style="background-color:#222; margin-bottom:40px;">
+<body>
 
   <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container clearfix">
@@ -42,7 +42,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">K<span style="color: gray;">!</span></a>
+        <a class="navbar-brand" href="#">K!</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -66,7 +66,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hummingbird <strong class="caret"></strong></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hummingbird<strong class="caret"></strong></a>
             <ul class="dropdown-menu">
               <li>
                 <a href="hb.html">Users Library</a>
@@ -80,7 +80,7 @@
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sugoi stuff <strong class="caret"></strong></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sugoi stuff<strong class="caret"></strong></a>
             <ul class="dropdown-menu">
               <li>
                 <a target="_blank" href="https://twitter.com/KustoSan"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
@@ -101,50 +101,53 @@
     </div>
   </nav>
 
-  <div id="hb-container" class="container" name="top">
-    <div id="hb-header" class="row clearfix"></div>
 
-    <div id="hb-biobox"></div>
-    <div id="hb-info"></div>
+  <div class="row" id="hb-header"></div>
 
-    <div class="container container-k library-container" id="containerg">
+  <div class="row hb-info"></div>
 
+  <div class="container" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-lg-12">
+        <hr>
+        <h3 class="library-details">Library search</h3>
+        <br>
+      </div>
       <form>
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="input-group">
-              <input type="text" id="usersearch" class="form-control" name="user" placeholder="Username ...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="submit">Go!</button>
-              </span>
-            </div>
-            <!-- /input-group -->
-
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <div class="input-group">
+            <input type="text" id="usersearch" class="form-control" name="user" placeholder="Username ...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Go!</button>
+            </span>
           </div>
-          <div class="col-lg-3">
-            <select class="form-control" name="status" placeholder="Library status">
-              <option value='' disabled selected style='display:none;'>Library status</option>
-              <option>completed</option>
-              <option>on-hold</option>
-              <option>dropped</option>
-              <option>currently-watching</option>
-              <option>plan-to-watch</option>
-            </select>
-          </div>
-          <!-- /.col-lg-6 -->
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <select class="form-control" name="status" placeholder="Library status">
+            <option id="default-option" value='' disabled selected style='display:none;'>Library status</option>
+            <option>All</option>
+            <option>Completed</option>
+            <option>On-hold</option>
+            <option>Dropped</option>
+            <option>Currently-watching</option>
+            <option>Plan-to-watch</option>
+          </select>
         </div>
       </form>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="well well-sm">
-            <h3 id="h1-library"></h3>
-          </div>
-          <div id="hb-library"></div>
-        </div>
-      </div>
-
     </div>
+    <br>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <hr>
+        <h2 id="library-title"></h2>
+        <br>
+      </div>
+    </div>
+    <div class="row" id="hb-library">
+    </div>
+
+  </div>
 
 
 
@@ -156,8 +159,7 @@
     </a>
   </div>
 
-  <p class="copyright">All images and videos remain property of their original owners. Site & design © kusto.tk 2015</p>
-  </div>
+
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/active.js"></script>
@@ -166,6 +168,8 @@
   <script type="text/javascript" src="js/moment.min.js"></script>
   <script src="js/URI.js"></script>
   <script src="js/jsonp.js"></script>
+  <script src="js/autolinker.min.js"></script>
+
   <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
