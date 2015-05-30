@@ -73,9 +73,9 @@ p {
 }
 
 .navbar-inverse .navbar-nav > .active {
-  -webkit-box-shadow: inset 0px -5px 0px 0px rgba(117, 117, 117, 1);
-  -moz-box-shadow: inset 0px -5px 0px 0px rgba(117, 117, 117, 1);
-  box-shadow: inset 0px -5px 0px 0px rgba(117, 117, 117, 1);
+  -webkit-box-shadow: inset 0px -5px 0px 0px #F5F5F5;
+  -moz-box-shadow: inset 0px -5px 0px 0px #F5F5F5;
+  box-shadow: inset 0px -5px 0px 0px #F5F5F5;
 }
 
 .navbar-inverse .navbar-nav > .active:hover > a, .navbar-inverse .navbar-nav > .active > a {
@@ -91,9 +91,9 @@ p {
 }
 
 .navbar-nav > li:hover {
-  -webkit-box-shadow: inset 0px -5px 0px 0px rgba(117, 117, 117, 1);
-  -moz-box-shadow: inset 0px 50px 0px 0px rgba(117, 117, 117, 1);
-  box-shadow: inset 0px -5px 0px 0px rgba(117, 117, 117, 1);
+  -webkit-box-shadow: inset 0px -5px 0px 0px #F5F5F5  ;
+  -moz-box-shadow: inset 0px 50px 0px 0px #F5F5F5;
+  box-shadow: inset 0px -5px 0px 0px #F5F5F5;
   transition: all .15s ease-in-out;
   background-color: transparent;
 }
@@ -401,7 +401,6 @@ span.resolution {
 .hb-username {
   text-align: center;
   font-size: 30px;
-  margin-bottom: 20px;
   margin-top: 10px;
 }
 
