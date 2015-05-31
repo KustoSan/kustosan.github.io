@@ -56,20 +56,17 @@ p {
   color: #F5F5F5 !important;
 }
 
-.navbar-nav > li > a:hover {
+.navbar-brand {
+  line-height: 18px;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
   background-color: transparent !important;
 }
 
-.navbar-brand {
-  position: absolute;
-  text-align: center;
-  margin-left: auto !important;
-  margin-right: auto;
-  font-weight: 200;
-  left: 0;
-  right: 0;
-  width: 50px;
-  font-size: 30px;
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  border: none;
+  background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .active {
@@ -91,7 +88,7 @@ p {
 }
 
 .navbar-nav > li:hover {
-  -webkit-box-shadow: inset 0px -5px 0px 0px #F5F5F5  ;
+  -webkit-box-shadow: inset 0px -5px 0px 0px #F5F5F5;
   -moz-box-shadow: inset 0px 50px 0px 0px #F5F5F5;
   box-shadow: inset 0px -5px 0px 0px #F5F5F5;
   transition: all .15s ease-in-out;
@@ -165,6 +162,8 @@ a:hover {
 .fa-link {
   color: orange;
 }
+
+
 /* ####### About me styling here #######
 ######################################### */
 
@@ -190,7 +189,6 @@ a:hover {
 }
 
 .container-k .jumbotron {
-  background-color: #222;
   color: #e6e6e6;
   -webkit-box-shadow: 0 0 1px 0 black;
   -moz-box-shadow: 0 0 1px 0 black;
@@ -198,7 +196,6 @@ a:hover {
 }
 
 #aboutme-container, #hb-container {
-  background-color: #191919;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -276,28 +273,8 @@ h1 {
   font-family: 'Ubuntu', sans-serif;
   color: #727272;
 }
-/* ####### Social styling here #######
-#########################################*/
 
-#___person_0 iframe {
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 10px 0 black;
-  -moz-box-shadow: 0 0 10px 0 black;
-  box-shadow: 0 0 10px 0 black;
-}
 
-#twitter-widget-0 {
-  height: 375px;
-  width: 810px !important;
-  -webkit-box-shadow: 0 0 10px 0 black;
-  -moz-box-shadow: 0 0 10px 0 black;
-  box-shadow: 0 0 10px 0 black;
-}
-
-#social-jumbo {
-  padding-left: 80px !important;
-  padding-right: 80px !important;
-}
 /* ####### Gallery styling here #######
 #########################################*/
 
@@ -310,21 +287,11 @@ span.resolution {
   font-style: italic;
 }
 
-.gallery-thumbnail {
+.gallery-thumbnail {}
 
-}
+
 /* ####### Anime styling here #######
 #########################################*/
-
-.brightness {
-  position: absolute;
-  background: black;
-  bottom: 0;
-  height: 30px !important;
-  opacity: 0;
-  min-height: 180px;
-  z-index: 1;
-}
 
 .mfp-iframe {
   width: 100%;
@@ -334,6 +301,8 @@ span.resolution {
   padding-top: 0 !important;
   height: inherit !important;
 }
+
+
 /* ####### Music styling here #######
 #########################################*/
 
@@ -344,8 +313,14 @@ span.resolution {
 .embed-responsive {
   border: 1px solid #ddd;
 }
+
+
 /* ####### HB styling here #######
 #########################################*/
+
+.container-error {
+  margin-top: 75px;
+}
 
 .thumbnail {
   padding: 0;
@@ -509,10 +484,25 @@ span.resolution {
   font-size: inherit;
   padding: 1px 6px 3px;
 }
+
+
 /* Screen sizing style 768px */
 
 @media (min-width: 768px) {
   .navbar-nav > li {
     max-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .active {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .navbar-nav > li:hover {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }

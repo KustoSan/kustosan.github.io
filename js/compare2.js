@@ -36,7 +36,7 @@ $(document).ready(function() {
 
             $.getJSON('https://hbird-cmp-node.herokuapp.com/compatibility/anime?user1=' + user + '&user2=' + val.id + '&callback=asd', function(data) {
 
-              $('#members').append('<tr id="ded"><td class="countTd"><b></b></td><td class="countNamu"><a style="color:#428bca;" href="https://hummingbird.me/users/' +
+              $('#members').append('<tr class="ded"><td class="countTd"><b></b></td><td class="countNamu"><a style="color:#428bca;" href="https://hummingbird.me/users/' +
                 val.id + '" target="_blank">' + val.id + '</a></td><td class="countPercent">' + data.percent + '</td><td>Stalker-kun</td></tr>');
               $('th').removeAttr("data-sorted")
               $('th').removeAttr("data-sorted-direction")

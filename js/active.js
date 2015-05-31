@@ -6,7 +6,6 @@ while (i != $('a').length) {
   href = $('a:eq(' + i + ')').attr('href')
   if (href == filename) {
     $('a:eq(' + i + ')').parents('li').addClass('active')
-    console.log(filename)
   }
   i++
 }
