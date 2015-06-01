@@ -4,7 +4,7 @@
 /*################ Get url vars ################*/
 function getUrlVars() {
   var vars = {};
-  var parts = window.location.href.split(/#.*/).join('').toLowerCase().replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+  var parts = window.location.href.split(/#.*/).join('').split('+').join('-').toLowerCase().replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
     vars[key] = value;
   });
   return vars;
@@ -51,30 +51,29 @@ $(document).ready(function() {
         $('#usersearch').val(data.name);
 
         if (data.waifu == null || "") {
-          data.waifu = "Unknown"
+          data.waifu = "Kusto"
         }
         if (data.location == null || "") {
-          data.location = "Unknown"
+          data.location = "Kusto's bed";
         }
         if (data.website == null || "") {
-          data.website = "Unknown"
+          data.website = "hummingbird.me/users/" + data.name;
         }
 
         if (data.bio == '') {
-          data.bio = "This user has not set any profile details."
+          data.bio = "This user loves kusto."
         }
 
         var website = Autolinker.link(data.website).split('</a>').join('</a> •').split(/•$/).join('');
         var bio = data.bio.split('\u2003').join(' ');
 
         $('#library-title').html(data.name + "'s " + status + " anime library");
-        $('#hb-header').html('<div class="hb-cover cover-opacity"></div>');
         $('#hb-header').append('<div class="hb-cover" style="background-image: url(' + data.cover_image + ')"><div class="hb-avatar" style="background-image: url(' + "'" + data.avatar + "'" + ')"></div>');
-        $('.hb-info').append('<div class="col-lg-4 col-lg-offset-4 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' + data.name + '"' + '>' + data.name + '</a><hr></div>');
-        $('.hb-info').append('<div class="col-lg-4 col-lg-offset-4"><pre class="hb-website">' + website + '</pre></div>');
-        $('.hb-info').append('<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-12"><div class="col-lg-3 col-lg-offset-2 col-xs-6"><p class="hb-waifu-husbando"><i class="fa fa-heart waifu"></i> ' + data.waifu +
-          '</p></div><div class="col-lg-3 col-lg-offset-2 col-xs-6"><p class="hb-location"><i class="fa fa-home home"></i> ' + data.location + '</p></div></div>');
-        $('.hb-info').append('<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 hb-bio"><p>' + bio + '</p></div>');
+        $('.hb-info').append('<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' + data.name + '"' + '>' + data.name + '</a><hr></div>');
+        $('.hb-info').append('<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"><pre class="hb-website">' + website + '</pre></div>');
+        $('.hb-info').append('<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 waifu-location"><div class="col-lg-6 col-xs-6"><p class="hb-waifu-husbando"><i class="fa fa-heart waifu"></i> ' + data.waifu +
+          '</p></div><div class="col-lg-6 col-xs-6 text-right"><p class="hb-location">' + data.location + ' <i class="fa fa-home home"></i></p></div></div>');
+        $('.hb-info').append('<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 hb-bio"><p>' + bio + '</p></div>');
       }
     })
 
