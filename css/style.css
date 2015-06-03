@@ -133,7 +133,7 @@ a:hover {
   color: red;
 }
 
-.fa-home {
+.fa-home, .fa-map-marker {
   color: #428bca;
 }
 
