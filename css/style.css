@@ -344,14 +344,11 @@ span.resolution {
   width: 130px;
   height: 130px;
   background-size: cover;
-  border-radius: 70px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 335px;
-  z-index: 2;
+  border-radius: 8px;
+}
+
+.user-info {
+  margin-top: -65px;
 }
 
 .hb-cover {
@@ -376,7 +373,6 @@ span.resolution {
 }
 
 .hb-username {
-  text-align: center;
   font-size: 30px;
   margin-top: 10px;
 }
@@ -385,8 +381,9 @@ span.resolution {
   color: #212121;
 }
 
-.hb-bio {
-  margin-top: 35px;
+.waifu-location {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .hb-bio > p {
@@ -418,24 +415,17 @@ span.resolution {
 .hb-website {
   font-size: 16px;
   color: #212121;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hb-website > a {
   color: #448AFF;
 }
 
-#hb-header {
+.header {
   width: 100%;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 50px;
-}
-
-#hb-header p {
-  text-shadow: 0 0 6px black;
 }
 
 .form-title {
@@ -495,6 +485,18 @@ span.resolution {
   }
 }
 
+@media (max-width: 1200px) {
+  .hb-cover {
+    height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hb-cover {
+    height: 250px;
+  }
+}
+
 @media (max-width: 768px) {
   .active {
     -webkit-box-shadow: none !important;
@@ -505,5 +507,8 @@ span.resolution {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;
+  }
+  .hb-cover {
+    height: 200px;
   }
 }

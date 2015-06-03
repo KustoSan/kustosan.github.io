@@ -101,10 +101,8 @@
     </div>
   </nav>
 
-  <div class="row" id="hb-header"></div>
-  <div class="container">
-    <div class="row hb-info"></div>
-  </div>
+  <div class="header"></div>
+  <div class="container user-info"></div>
 
   <div class="container container-error">
     <div class="row">
@@ -113,24 +111,25 @@
         <h3 class="library-details">Library search</h3>
         <br>
       </div>
-      <form>
+      <form method="GET">
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <p>Username</p>
           <div class="input-group">
             <input type="text" id="usersearch" class="form-control" name="user" placeholder="Username ...">
-            <span class="input-group-btn">
+            <div class="input-group-btn">
               <button class="btn btn-default" type="submit">Go!</button>
-            </span>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <p>Library selection</p>
           <select class="form-control" name="status" placeholder="Library status">
-            <option id="default-option" value='' disabled selected style='display:none;'>Library status</option>
-            <option>All</option>
-            <option>Completed</option>
-            <option>On Hold</option>
-            <option>Dropped</option>
-            <option>Currently Watching</option>
-            <option>Plan to Watch</option>
+            <option id="all">All</option>
+            <option id="completed">Completed</option>
+            <option id="on-hold">On Hold</option>
+            <option id="dropped">Dropped</option>
+            <option id="currently-watching">Currently Watching</option>
+            <option id="plan-to-watch">Plan to Watch</option>
           </select>
         </div>
       </form>
@@ -144,8 +143,7 @@
         <br>
       </div>
     </div>
-    <div class="row" id="hb-library">
-    </div>
+    <div class="row" id="hb-library"></div>
 
   </div>
 
