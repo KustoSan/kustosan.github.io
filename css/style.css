@@ -503,6 +503,15 @@ span.resolution {
     -moz-box-shadow: none !important;
     box-shadow: none !important;
   }
+
+  .navbar-nav .dropdown-menu > li > a {
+    color: #F5F5F5 !important;
+  }
+
+  .navbar-nav .dropdown-menu .active > a {
+    background-color: #E57373 !important;
+  }
+
   .navbar-nav > li:hover {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
