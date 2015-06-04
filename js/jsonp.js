@@ -79,7 +79,7 @@ MIT license
   };
 
   $.extend($.jsonp, {
-    PROXY: 'http://jsonp.afeld.me/',
+    PROXY: '//jsonp.afeld.me/',
 
     // make this available for easier testing
     getLocation: function(){
