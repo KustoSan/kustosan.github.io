@@ -90,13 +90,13 @@ $(document).ready(function() {
         // Appending user data
         $('#library-title').html(data.name + "'s " + libraryStatus.toLowerCase() + " anime library");
         $('.header').append('<div class="hb-cover" style="background-image: url(' + data.cover_image + ')">');
-        $('.user-info').append('<div class="row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><div class="hb-avatar" style="background-image: url(' + "'" + data.avatar + "'" + ')"></div></div></div>')
-        $('.user-info').append('<div class="row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' +
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><div class="hb-avatar" style="background-image: url(' + "'" + data.avatar + "'" + ')"></div></div></div>')
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' +
           data.name + '"' + '>' + data.name + '</a></div></div>');
-        $('.user-info').append('<div class="row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><p class="hb-website">' + website + '</p></div></div>');
-        $('.user-info').append('<div class="row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><div class="col-lg-6 col-xs-6"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i> ' + data.waifu +
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><p class="hb-website">' + website + '</p></div></div>');
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><div class="col-lg-6 col-xs-6"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i> ' + data.waifu +
           '</p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.location + '</p></div></div></div>');
-        $('.user-info').append('<div class="row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
       }
     })
 

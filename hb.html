@@ -35,7 +35,7 @@
 <body>
 
   <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container ">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="icon-bar"></span>
@@ -102,18 +102,17 @@
   </nav>
 
   <div class="header"></div>
-  <div class="container user-info"></div>
+  <div class="container hb-container user-info"></div>
 
-  <div class="container container-error">
-    <div class="row">
+  <div class="container hb-container container-error">
+    <div class="row hb-row">
       <div class="col-lg-12">
-        <hr>
         <h3 class="library-details">Library search</h3>
         <br>
       </div>
-      <form method="GET">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-          <p>Username</p>
+      <form>
+        <div style="padding-bottom: 20px;" class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <p class="form-text">Username</p>
           <div class="input-group">
             <input type="text" id="usersearch" class="form-control" name="user" placeholder="Username ...">
             <div class="input-group-btn">
@@ -121,8 +120,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-          <p>Library selection</p>
+        <div style="padding-bottom: 20px;" class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+          <p class="form-text">Library selection</p>
           <select class="form-control" name="status" placeholder="Library status">
             <option id="all">All</option>
             <option id="completed">Completed</option>
@@ -134,22 +133,21 @@
         </div>
       </form>
     </div>
-    <br>
-    <br>
+  </div>
 
-    <div class="row">
+  <div class="container hb-container">
+    <div class="row hb-row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h2 id="library-title"></h2>
         <br>
       </div>
     </div>
-    <div class="row" id="hb-library"></div>
-
+    <div class="row hb-row" id="hb-library"></div>
   </div>
 
 
   <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 13px; right: 15px; opacity: 1; cursor: pointer;">
-    <a href="#top">
+    <a href="#">
       <img src="css/imgs/up.png" style="width:40px; height:40px">
     </a>
   </div>
