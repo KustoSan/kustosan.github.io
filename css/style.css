@@ -97,7 +97,7 @@ pre {
   background-color: #E57373;
 }
 
-.navbar-nav > li:hover, .navbar-nav > li:focus, .navbar-nav > li:active {
+.navbar-nav > li:hover, .open {
   -webkit-box-shadow: inset 0px -5px 0px 0px #F5F5F5;
   -moz-box-shadow: inset 0px 50px 0px 0px #F5F5F5;
   box-shadow: inset 0px -5px 0px 0px #F5F5F5;
