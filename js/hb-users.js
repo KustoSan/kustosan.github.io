@@ -48,6 +48,9 @@ function lifeSpent(value) {
     }
   }
 
+  if (timeText == "") {
+    timeText = "0 minutes"
+  }
   return timeText;
 }
 
