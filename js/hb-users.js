@@ -20,12 +20,43 @@ function compare(a, b) {
   return 0;
 }
 
+function lifeSpent(value) {
+  var units = {
+    "year": 24 * 60 * 365,
+    "month": 24 * 60 * 30,
+    "day": 24 * 60,
+    "hour": 60,
+    "minute": 1,
+  }
+  var result = []
+
+  for (var name in units) {
+    var p = Math.floor(value / units[name]);
+    if (p == 1) result.push(p + " " + name);
+    if (p >= 2) result.push(p + " " + name + "s");
+    value %= units[name]
+  };
+
+  var timeText = "";
+  for (var i = 0; i < result.length; i++) {
+    if (i == result.length - 1) {
+      timeText = timeText + ' and ' + result[i];
+    } else if (i == result.length - 2) {
+      timeText = timeText + result[i];
+    } else {
+      timeText = timeText + result[i] + ', ';
+    }
+  }
+
+  return timeText;
+}
+
 // Loading text
 $(document).ajaxStart(function() {
   $('#hb-library').html('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><h4><i class="fa fa-spinner fa-pulse"></i> Loading...</h4>');
 })
 
-$('#search').submit(function(){
+$('#search').submit(function() {
   var formAction = $("#selectsearch").val() == "people" ? "user" : "content";
   $("#search-form").attr("action", "/search/" + formAction);
 });
@@ -83,6 +114,9 @@ $(document).ready(function() {
           data.bio = "This user loves kusto."
         }
 
+        // Set life spent on anime
+        var timeSpent = lifeSpent(data.life_spent_on_anime);
+
         // Auto detect user websites urls
         var website = Autolinker.link(data.website).split('</a>').join('</a> •').split(/•$/).join('');
         var bio = data.bio.split('\u2003').join(' ');
@@ -94,9 +128,10 @@ $(document).ready(function() {
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' +
           data.name + '"' + '>' + data.name + '</a></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><p class="hb-website">' + website + '</p></div></div>');
-        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><div class="col-lg-6 col-xs-6"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i> ' + data.waifu +
-          '</p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.location + '</p></div></div></div>');
-        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i><a href="//hummingbird.me/anime/' +
+          data.waifu_slug + '"> ' + data.waifu + '</a></p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.location + '</p></div></div>');
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><hr><p><i class="fa fa-eye fa-fw watched"></i> ' + "I've watched " + timeSpent + ' of anime</p></div></div>');
       }
     })
 
