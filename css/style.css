@@ -175,11 +175,6 @@ a:hover {
   color: green;
 }
 
-.top-arrow-link {
-  float: right;
-  padding-right: 70px;
-}
-
 .top-arrow {
   position: fixed;
   height: 50px;
@@ -193,6 +188,7 @@ a:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 100%;
+  z-index: 15;
 }
 
 
