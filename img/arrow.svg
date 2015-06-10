@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-
+<svg width="24.000000000000004" height="24.000000000000004" xmlns="http://www.w3.org/2000/svg">
  <g>
   <title>background</title>
-  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <rect x="-1" y="-1" width="26" height="26" id="canvas_background" fill="none"/>
  </g>
+
  <g>
   <title>Layer 1</title>
-  <path id="svg_1" fill="none" d="m0,1l48,0l0,48l-48,0l0,-48z"/>
-  <path transform="rotate(-90 24.000000000000004,24) " id="svg_2" fill="#fff" d="m24,8l-2.83,2.83l11.17,11.17l-24.34,0l0,4l24.34,0l-11.17,11.169998l2.83,2.830002l16,-16l-16,-16z"/>
+  <path d="m0,0l48,0l0,48l-48,0l0,-48z" fill="none" id="svg_1"/>
+  <path stroke="null" d="m12.000001,6.316454l-1.005279,1.005278l3.967827,3.967823l-8.646093,0l0,1.420889l8.646093,0l-3.967827,3.967823l1.005279,1.00528l5.683543,-5.683548l-5.683543,-5.683544z" fill="#fff" id="svg_2" transform="rotate(-90 12.000000000000002,11.999998092651367) "/>
  </g>
 </svg>
