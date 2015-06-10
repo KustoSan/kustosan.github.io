@@ -112,7 +112,9 @@ $(document).ready(function() {
         if (data.website == null || "") {
           data.website = "hummingbird.me/users/" + data.name;
         }
-
+        if (data.avatar == "/assets/processing-avatar.jpg") {
+          data.avatar = "//hummingbird.me/assets/processing-avatar.jpg";
+        }
         if (data.bio == '') {
           data.bio = "This user loves kusto."
         }
