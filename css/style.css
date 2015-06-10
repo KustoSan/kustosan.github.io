@@ -182,7 +182,7 @@ a:hover {
   bottom: 30px;
   background-color: #C2185B;
   background-size: 40px;
-  background-image: url(imgs/arrow.svg);
+  background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
