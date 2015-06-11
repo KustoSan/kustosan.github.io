@@ -126,20 +126,6 @@
   <script src="js/jquery.magnific-popup.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/jquery.lazyload.js"></script>
-  <script>
-    $(document).ajaxStop(function() {
-      $(".lazy").lazyload({
-        effect: "fadeIn",
-        threshold: 800
-      });
-      $('.popup, .mfp-img').magnificPopup({
-        type: 'image'
-      });
-    })
-    $("img").error(function hide() {
-      $(this).hide();
-    });
-  </script>
 
   <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54af1f634daeb2da" async="async"></script>
 
