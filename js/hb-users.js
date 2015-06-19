@@ -175,7 +175,7 @@ $(document).ready(function() {
 
           // Append user library data
           $('#hb-library').append('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><div class="thumbnail"><a target="_blank" href="' + data.anime.url +
-            '"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="' + data.anime.cover_image + '"></a><div class="caption"><h4>' +
+            '"><img style="min-width:250px; min-height:362px;" class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="' + data.anime.cover_image + '"></a><div class="caption"><h4>' +
             data.anime.title + '</h4><p>' + statusText + '</p><p>Rewatched: ' + rewatched + '</p></div></div></div>');
         })
       }
