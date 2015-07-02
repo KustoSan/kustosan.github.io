@@ -20,6 +20,7 @@ function compare(a, b) {
   return 0;
 }
 
+// Function to get life spent on anime
 function lifeSpent(value) {
   var units = {
     "year": 24 * 60 * 365,
@@ -52,6 +53,27 @@ function lifeSpent(value) {
     timeText = "0 minutes"
   }
   return timeText;
+}
+
+// Function to get library update date
+function updatedAgo(value) {
+  var units = {
+    "year": 24 * 60 * 365,
+    "month": 24 * 60 * 30,
+    "day": 24 * 60,
+    "hour": 60,
+    "minute": 1,
+  }
+  var result = []
+
+  for (var name in units) {
+    var p = Math.floor(value / units[name]);
+    if (p == 1) result.push(p + " " + name);
+    if (p >= 2) result.push(p + " " + name + "s");
+    value %= units[name]
+  };
+
+  return result;
 }
 
 // Loading text
@@ -158,13 +180,14 @@ $(document).ready(function() {
           if (data.anime.episode_count == null) {
             data.anime.episode_count = "?";
           }
-          if (data.rewatched_times == "0") {
-            var rewatched = "No";
-          } else {
-            rewatched = data.rewatched_times + ' times';
-          }
 
           var statusText = 'Watched ' + data.episodes_watched + ' of ' + data.anime.episode_count + ' episodes';
+
+          var date1 = new Date(data.updated_at);
+          var date2 = new Date();
+          var diffDays = (date2.getTime() - date1.getTime());
+          var diffDays = Math.floor(diffDays / 1000 / 60);
+          var diffDays = updatedAgo(diffDays);
 
           if (data.status == 'plan-to-watch') {
             statusText = "Plans to watch"
@@ -176,7 +199,7 @@ $(document).ready(function() {
           // Append user library data
           $('#hb-library').append('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><div class="thumbnail"><a target="_blank" href="' + data.anime.url +
             '"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="' + data.anime.cover_image + '"></a><div class="caption"><h4>' +
-            data.anime.title + '</h4><p>' + statusText + '</p><p>Rewatched: ' + rewatched + '</p></div></div></div>');
+            data.anime.title + '</h4><p>' + statusText + '</p><p>' + diffDays[0] + ' ago</p></div></div></div>');
         })
       }
     })
