@@ -76,17 +76,37 @@ function updatedAgo(value) {
   return result;
 }
 
+// Anime search
+$('#animesearch').keyup(function() {
+
+  searchText = this.value.split(' ').join('-')
+  $('#hb-library > div').hide().addClass('404');
+  $('#hb-library > div[id*="' + searchText + '"]').show().removeClass('404');
+  $('#hb-library > div[id*="' + searchText + '"] > .thumbnail a .lazy').lazyload()
+
+  if (searchText == '') {
+    $('#hb-library > div').show().removeClass('404');
+  }
+
+  if ($('#hb-library > .404').length == $('#hb-library > div').length) {
+    $('#hb-library').append('<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px;"></diV>')
+    console.log('asd')
+  } else {
+    if ($('.not-found')) {
+      $('.not-found').remove
+    }
+  }
+
+});
+
 // Loading text
 $(document).ajaxStart(function() {
   $('#hb-library').html('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><h4><i class="fa fa-spinner fa-pulse"></i> Loading...</h4>');
 })
 
-$('#search').submit(function() {
-  var formAction = $("#selectsearch").val() == "people" ? "user" : "content";
-  $("#search-form").attr("action", "/search/" + formAction);
-});
-
 $(document).ready(function() {
+
+  $('.anime-search, .library-title-col').hide()
 
   $.ajaxSetup({
     cache: false
@@ -169,7 +189,7 @@ $(document).ready(function() {
         // Message is library is empty
         $('#hb-library').html('');
         if (jQuery.isEmptyObject(library)) {
-          $('#hb-library').html('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><p><i class="fa fa-frown-o"></i> Empty...</p><br>')
+          $('#hb-library').append('<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px;"></diV>')
         }
 
         // Sorting library
@@ -197,7 +217,8 @@ $(document).ready(function() {
           }
 
           // Append user library data
-          $('#hb-library').append('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><div class="thumbnail"><a target="_blank" href="' + data.anime.url +
+          $('.anime-search, .library-title-col').show()
+          $('#hb-library').append('<div id="' + data.anime.slug + '" class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><div class="thumbnail"><a target="_blank" href="' + data.anime.url +
             '"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="' + data.anime.cover_image + '"></a><div class="caption"><h4>' +
             data.anime.title + '</h4><p>' + statusText + '</p><p>' + diffDays[0] + ' ago</p></div></div></div>');
         })
