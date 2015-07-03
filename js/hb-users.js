@@ -89,7 +89,7 @@ $('#animesearch').keyup(function() {
   }
 
   if ($('#hb-library > .404').length == $('#hb-library > div').length) {
-    $('#hb-library').append('<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 not-found"><img src="img/not-found.png" style="position: relative; top: 20px;"></diV>')
+    $('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10 not-found"><img src="img/not-found.png" style="position: relative; top: 20px; width: 100%"></diV>')
     console.log('asd')
   } else {
     if ($('.not-found')) {
@@ -189,7 +189,7 @@ $(document).ready(function() {
         // Message is library is empty
         $('#hb-library').html('');
         if (jQuery.isEmptyObject(library)) {
-          $('#hb-library').append('<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px;"></diV>')
+          $('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px; width: 100%;"></diV>')
         }
 
         // Sorting library
