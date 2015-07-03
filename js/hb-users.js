@@ -89,7 +89,7 @@ $('#animesearch').keyup(function() {
   }
 
   if ($('#hb-library > .404').length == $('#hb-library > div').length) {
-    $('#hb-library').append('<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px;"></diV>')
+    $('#hb-library').append('<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 not-found"><img src="img/not-found.png" style="position: relative; top: 20px;"></diV>')
     console.log('asd')
   } else {
     if ($('.not-found')) {
