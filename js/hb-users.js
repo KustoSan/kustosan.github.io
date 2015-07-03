@@ -93,7 +93,7 @@ $('#animesearch').keyup(function() {
     console.log('asd')
   } else {
     if ($('.not-found')) {
-      $('.not-found').remove
+      $('.not-found').remove()
     }
   }
 
