@@ -58,31 +58,45 @@ function lifeSpent(value) {
 // Function to get library update date
 function updatedAgo(value) {
   var units = {
-    "year": 24 * 60 * 365,
-    "month": 24 * 60 * 30,
-    "day": 24 * 60,
-    "hour": 60,
-    "minute": 1,
+    "year": 60 * 24 * 60 * 365,
+    "month": 60 * 24 * 60 * 30,
+    "day": 60 * 24 * 60,
+    "hour": 60 * 60,
+    "minute": 60,
+    "second": 1,
   }
   var result = []
 
   for (var name in units) {
     var p = Math.floor(value / units[name]);
-    if (p == 1) result.push(p + " " + name);
+
+    if (p == 1) {
+      p = "a";
+      if (name == "hour") {
+        p = "an"
+      }
+      result.push(p + " " + name);
+    }
+
     if (p >= 2) result.push(p + " " + name + "s");
     value %= units[name]
   };
-
+  if (result[0] == undefined) {
+    result[0] = "seconds"
+  }
   return result;
 }
 
 // Anime search
 $('#animesearch').keyup(function() {
 
-  searchText = this.value.split(' ').join('-')
+  searchText = this.value.toLowerCase();
   $('#hb-library > div').hide().addClass('404');
-  $('#hb-library > div[id*="' + searchText + '"]').show().removeClass('404');
-  $('#hb-library > div[id*="' + searchText + '"] > .thumbnail a .lazy').lazyload()
+  $('#hb-library > div[title*="' + searchText + '"]').show().removeClass('404');
+  $('#hb-library > div[alt-title*="' + searchText + '"]').show().removeClass('404');
+  $('#hb-library > div[title*="' + searchText + '"] > .thumbnail a .lazy').lazyload()
+  $('#hb-library > div[alt-title*="' + searchText + '"] > .thumbnail a .lazy').lazyload()
+
 
   if (searchText == '') {
     $('#hb-library > div').show().removeClass('404');
@@ -206,7 +220,9 @@ $(document).ready(function() {
           var date1 = new Date(data.updated_at);
           var date2 = new Date();
           var diffDays = (date2.getTime() - date1.getTime());
-          var diffDays = Math.floor(diffDays / 1000 / 60);
+          console.log(diffDays + ' before')
+          var diffDays = Math.floor(diffDays / 1000);
+          console.log(diffDays + ' after')
           var diffDays = updatedAgo(diffDays);
 
           if (data.status == 'plan-to-watch') {
@@ -216,13 +232,28 @@ $(document).ready(function() {
             statusText = 'Completed';
           }
 
+          var title;
+          var alternate_title;
+
+          title = data.anime.title.toLowerCase();
+
+          if (data.anime.alternate_title) {
+            alternate_title = data.anime.alternate_title.toLowerCase();
+          } else if (alternate_title == undefined) {
+            alternate_title = '';
+          }
+
           // Append user library data
           $('.anime-search, .library-title-col').show()
-          $('#hb-library').append('<div id="' + data.anime.slug + '" class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><div class="thumbnail"><a target="_blank" href="' + data.anime.url +
+          $('#hb-library').append('<div title="' + title + '" alt-title="' + alternate_title + '" class="col-lg-3 col-md-4 col-sm-4 col-xs-6"><div class="thumbnail"><a target="_blank" href="' + data.anime.url +
             '"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="' + data.anime.cover_image + '"></a><div class="caption"><h4>' +
             data.anime.title + '</h4><p>' + statusText + '</p><p>' + diffDays[0] + ' ago</p></div></div></div>');
         })
       }
+    })
+
+    .success(function() {
+      $('#hb-library').css('min-height', '390px')
     })
 
     // Error message on ajax error
