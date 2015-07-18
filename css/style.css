@@ -637,6 +637,17 @@ span.resolution {
   color: #212121;
 }
 
+.champ-level {
+  font-size: 20px;
+  margin-left: 3px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: bold;
+}
+
+.champ-level > p {
+  color: #FFF;
+}
+
 
 /* Screen sizing style 768px */
 

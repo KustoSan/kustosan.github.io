@@ -233,6 +233,8 @@ $(document).ready(function() {
         item5 = this.stats.item5;
         item6 = this.stats.item6;
 
+        level = this.stats.level;
+
         gameType = this.subType.split('_').join(' ');
         if (gameType == "NONE") {
           gameType = "CUSTOM";
@@ -250,7 +252,11 @@ $(document).ready(function() {
                   '</div>' +
                   //Game type
                   //Champ image
-                  '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 champ-img" style="background-image: url(//lkimg.zamimg.com/shared/riot/images/champions/' + champId + '.png)"></div>' +
+                  '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 champ-img" style="background-image: url(//lkimg.zamimg.com/shared/riot/images/champions/' + champId + '.png)">'+
+                  '<div class="champ-level">' +w
+                  '<p>' + level + '</p>' +
+                  '</div>' +
+                  '</div>' +
                   //Champ image
                   //Spells images
                   '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 spells-box">' +
