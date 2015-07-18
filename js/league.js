@@ -9,6 +9,53 @@ function getUrlVars() {
 
 var ranked;
 
+//N Formater
+function nFormatter(num) {
+     if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+     }
+     if (num >= 1000000) {
+        return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+     }
+     if (num >= 1000) {
+        return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+     }
+     return num;
+}
+
+// Function to get game duration
+function timeConvert(value) {
+  var units = {
+    "year": 60 * 24 * 60 * 365,
+    "month": 60 * 24 * 60 * 30,
+    "day": 60 * 24 * 60,
+    "hour": 60 * 60,
+    "minute": 60,
+    "second": 1,
+  }
+  var result = []
+
+  for (var name in units) {
+    var p = Math.floor(value / units[name]);
+
+    if (p == 1) {
+      p = "a";
+      if (name == "hour") {
+        p = "an"
+      }
+      result.push(p + " " + name);
+    }
+
+    if (p >= 2) result.push(p + " " + name + "s");
+    value %= units[name]
+  };
+  if (result[0] == undefined) {
+    result[0] = "seconds"
+  }
+  return result;
+}
+
+
 // Loading text
 $(document).ajaxStart(function() {
   $('#last-matches').html('<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 league-loading"><h4 class=""><i class="fa fa-spinner fa-pulse"></i> Loading...</h4>');
@@ -130,8 +177,10 @@ $(document).ready(function() {
 
         if (this.stats.win == true) {
           winLose = '#66BB6A';
+          result = "WIN"
         } else {
           winLose = '#EF5350';
+          result = "LOSS"
         }
 
         champId = this.championId;
@@ -158,26 +207,97 @@ $(document).ready(function() {
           assists = '0';
         }
 
+        if (this.stats.minionsKilled) {
+          creeps = this.stats.minionsKilled;
+        } else {
+          creeps = '0';
+        }
+
+        if (this.stats.goldEarned) {
+          gold = nFormatter(this.stats.goldEarned);
+        } else {
+          gold = '0';
+        }
+
+        if (this.stats.turretsKilled) {
+          turrets = this.stats.turretsKilled;
+        } else {
+          turrets = '0';
+        }
+
+        item0 = this.stats.item0;
+        item1 = this.stats.item1;
+        item2 = this.stats.item2;
+        item3 = this.stats.item3;
+        item4 = this.stats.item4;
+        item5 = this.stats.item5;
+        item6 = this.stats.item6;
+
+        gameType = this.subType.split('_').join(' ');
+        if (gameType == "NONE") {
+          gameType = "CUSTOM";
+        }
+        gameDuration = timeConvert(this.stats.timePlayed);
+
         $('.last-matches').append('' +
           '<div class="row hb-row match-row">' +
             '<a target="_blank" href="http://matchhistory.euw.leagueoflegends.com/es/#match-details/EUW1/' + gameId + '/' + playerMatchId + '?tab=overview">' +
               '<div style="border-left: 10px solid' + winLose + ';" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 match-col">' +
                 '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 match-content">' +
+                  //Game type
+                  '<div class="game-type">' +
+                    '<h6>' + gameType + '</h6>' +
+                  '</div>' +
+                  //Game type
+                  //Champ image
                   '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 champ-img" style="background-image: url(//lkimg.zamimg.com/shared/riot/images/champions/' + champId + '.png)"></div>' +
+                  //Champ image
+                  //Spells images
                   '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 spells-box">' +
                     '<div class="summoner-spell" style="background-image: url(//lkimg.zamimg.com/images/spells/' + spell1 + '.png)"></div>' +
                     '<div class="summoner-spell" style="background-image: url(//lkimg.zamimg.com/images/spells/' + spell2 + '.png)"></div>' +
                   '</div>' +
+                  //Spells images
+                  //Match Score
                   '<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 match-score">' +
-                    '<p>' + kills + ' Kills</p>' +
-                    '<p>' + deaths + ' Deaths</p>' +
-                    '<p>' + assists + ' Assists</p>' +
+                    '<p><span class="match-bold">' + kills + '</span> Kills</p>' +
+                    '<p><span class="match-bold">' + deaths + '</span> Deaths</p>' +
+                    '<p><span class="match-bold">' + assists + '</span> Assists</p>' +
                   '</div>' +
+                  //Match Score
+                  //Farm Score
+                  '<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 match-score">' +
+                    '<p><span class="match-bold">' + gold + '</span> Gold</p>' +
+                    '<p><span class="match-bold">' + creeps + '</span> Creeps</p>' +
+                    '<p><span class="match-bold">' + turrets + '</span> Turrets</p>' +
+                  '</div>' +
+                  //Farm Score
+                  //Win or Loss
+                  '<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 game-result">' +
+                    '<h4 style="color:' + winLose + ';">' + result + '</h4>' +
+                  '</div>' +
+                  //Win or Loss
+                  //Game duration
+                  '<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 game-duration">' +
+                    '<h4>' + gameDuration[0] + '</h4>' +
+                  '</div>' +
+                  //Game duration
+                  //Items images
+                  '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 items-box">' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item0 + '.png)"></div>' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item1 + '.png)"></div>' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item2 + '.png)"></div>' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item3 + '.png)"></div>' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item4 + '.png)"></div>' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item5 + '.png)"></div>' +
+                    '<div class="summoner-item" style="background-image: url(//static-img.kassad.in/item/' + item6 + '.png)"></div>' +
+                  '</div>' +
+                  //Items images
                 '</div>' +
               '</div>' +
-              '<div class="row hb-row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr></div>' +
-              '</a>' +
-            '</div>')
+            '</a>' +
+            '<div class="row hb-row"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr></div>' +
+          '</div>')
       })
 
     })

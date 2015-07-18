@@ -579,9 +579,23 @@ span.resolution {
   border-radius: 3px;
 }
 
+.summoner-item {
+  position: relative;
+  background-size: cover;
+  height: 47px;
+  width: 47px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
 .match-content {
   top: 25px;
   height: 100px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
 }
 
 .spells-box {
@@ -589,6 +603,24 @@ span.resolution {
   height: 100px;
   width: 47px;
   margin-left: 6px;
+  margin-right: 20px;
+}
+
+.items-box {
+  margin-top: 26px;
+  width: auto;
+  height: 47px;
+}
+
+.game-type {
+  position: absolute;
+  right: 0px;
+  top: -11px;
+}
+
+.game-result, .game-duration {
+  width: auto;
+  margin-top: 32px;
 }
 
 .match-score {
@@ -598,6 +630,11 @@ span.resolution {
 
 .match-score p {
   margin: 0;
+}
+
+.match-bold {
+  font-weight: bold;
+  color: #212121;
 }
 
 
@@ -612,6 +649,10 @@ span.resolution {
 @media (max-width: 1200px) {
   .hb-cover {
     height: 300px;
+  }
+  .items-box {
+    display: none;
+    display: -webkit-box;
   }
 }
 
