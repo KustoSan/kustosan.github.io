@@ -253,7 +253,7 @@ $(document).ready(function() {
                   //Game type
                   //Champ image
                   '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 champ-img" style="background-image: url(//lkimg.zamimg.com/shared/riot/images/champions/' + champId + '.png)">'+
-                  '<div class="champ-level">' +w
+                  '<div class="champ-level">' +
                   '<p>' + level + '</p>' +
                   '</div>' +
                   '</div>' +
