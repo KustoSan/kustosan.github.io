@@ -652,6 +652,13 @@ span.resolution {
   color: #212121;
 }
 
+.match-date {
+  text-align: center;
+  font-size: 13px;
+  bottom: 11px;
+  position: relative;
+}
+
 
 /* Screen sizing style 768px */
 

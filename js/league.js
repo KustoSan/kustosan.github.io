@@ -74,7 +74,7 @@ $(document).ready(function() {
   } else {
     var summoner = summoner.replace('+', '%20');
   }
-  
+
   var _0x589c=["\x66\x63\x63\x61\x38\x63\x30\x61\x2D\x33\x32\x32\x35\x2D\x34\x36\x31\x63\x2D\x61\x37\x34\x35\x2D\x32\x33\x38\x66\x61\x35\x32\x38\x61\x61\x65\x32"];
   var key=_0x589c[0];
 
@@ -240,6 +240,7 @@ $(document).ready(function() {
           gameType = "CUSTOM";
         }
         gameDuration = timeConvert(this.stats.timePlayed);
+        matchDate = new Date(this.createDate).toISOString().slice(0, 10);
 
         $('.last-matches').append('' +
           '<div class="row hb-row match-row">' +
@@ -286,6 +287,7 @@ $(document).ready(function() {
                   //Game duration
                   '<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 game-duration">' +
                     '<h4>' + gameDuration[0] + '</h4>' +
+                    '<p class="match-date">(' + matchDate + ')</p>' +
                   '</div>' +
                   //Game duration
                   //Items images
