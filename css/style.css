@@ -541,6 +541,7 @@ span.resolution {
   -moz-box-shadow: none;
   box-shadow: none;
   float: right;
+  background-color: transparent;
 }
 
 .league-info {
