@@ -4,6 +4,10 @@
   font-family: roboto;
 }
 
+.home-html {
+  height: 100%;
+}
+
 body {
   background-color: #EEEEEE;
 }
@@ -192,7 +196,7 @@ a:hover {
 }
 
 
-/* ####### About me styling here #######
+/* ####### Home styling here #######
 ######################################### */
 
 .am {
@@ -265,11 +269,6 @@ h1 {
   color: #999 !important;
 }
 
-.home-bg {
-  background-repeat: no-repeat;
-  background-position: top;
-}
-
 .site-branding {
   position: absolute;
   left: 0;
@@ -282,22 +281,23 @@ h1 {
   z-index: 2;
   height: 190px;
   width: 250px;
-  background-color: #1d1d1d;
+  background-color: #FAFAFA;
   opacity: 0.97;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .branding-title {
   text-align: center;
   font-weight: 600;
   opacity: 1;
-  color: white !important;
+  color: #C2185B !important;
   font-size: 30px;
   letter-spacing: 4px;
 }
 
 .branding-line {
   width: 100px;
-  border: 1.9px solid #fff;
+  border: 1.9px solid #E91E63;
 }
 
 .branding-description {
@@ -305,21 +305,15 @@ h1 {
   font-weight: 100;
   font-size: 18px;
   font-family: 'Ubuntu', sans-serif;
-  color: #727272;
+  color: #F06292;
 }
 
-.branding-bot-bar {
-  height: 25px;
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
   padding: 0;
-  top: 235px;
-  line-height: 1.3;
-}
-
-.branding-bot-bar > .branding-description > a {
-  font-size: 15px;
-  font-family: roboto !important;
-  font-weight: 300;
-  color: #448AFF;
+  background-color: #EEEEEE;
 }
 
 
