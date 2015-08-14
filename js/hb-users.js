@@ -104,7 +104,6 @@ $('#animesearch').keyup(function() {
 
   if ($('#hb-library > .404').length == $('#hb-library > div').length) {
     $('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10 not-found"><img src="img/not-found.png" style="position: relative; top: 20px; width: 100%"></diV>')
-    console.log('asd')
   } else {
     if ($('.not-found')) {
       $('.not-found').remove()
@@ -220,9 +219,7 @@ $(document).ready(function() {
           var date1 = new Date(data.updated_at);
           var date2 = new Date();
           var diffDays = (date2.getTime() - date1.getTime());
-          console.log(diffDays + ' before')
           var diffDays = Math.floor(diffDays / 1000);
-          console.log(diffDays + ' after')
           var diffDays = updatedAgo(diffDays);
 
           if (data.status == 'plan-to-watch') {
@@ -235,7 +232,9 @@ $(document).ready(function() {
           var title;
           var alternate_title;
 
-          title = data.anime.title.toLowerCase();
+          if (data.anime.title != null) {
+            title = data.anime.title.toLowerCase();
+          }
 
           if (data.anime.alternate_title) {
             alternate_title = data.anime.alternate_title.toLowerCase();
