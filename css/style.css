@@ -326,6 +326,7 @@ span.resolution {
 
 .gallery-thumbnail {
   margin-bottom: 30px;
+  min-height: 159.25px;
 }
 
 
@@ -691,11 +692,17 @@ span.resolution {
     display: none;
     display: -webkit-box;
   }
+  .gallery-thumbnail {
+    min-height: 176.328px;
+  }
 }
 
 @media (max-width: 992px) {
   .hb-cover {
     height: 250px;
+  }
+  .gallery-thumbnail {
+    min-height: 130.5px;
   }
 }
 
@@ -721,5 +728,8 @@ span.resolution {
   }
   .hb-cover {
     height: 200px;
+  }
+  .gallery-thumbnail {
+    min-height: 0px;
   }
 }
