@@ -72,7 +72,7 @@ $(document).ready(function() {
   if (!summoner) {
     var summoner = 'Kusto'
   } else {
-    var summoner = summoner.replace('+', '%20');
+    var summoner = summoner.split('+').join('');
   }
 
   var _0x589c=["\x66\x63\x63\x61\x38\x63\x30\x61\x2D\x33\x32\x32\x35\x2D\x34\x36\x31\x63\x2D\x61\x37\x34\x35\x2D\x32\x33\x38\x66\x61\x35\x32\x38\x61\x61\x65\x32"];
