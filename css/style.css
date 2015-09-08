@@ -70,6 +70,11 @@ pre {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .15);
 }
 
+.navbar-nav > li {
+  transition: all .15s ease-in-out;
+  box-shadow: inset 0px 0px 0px 0px #F5F5F5;
+}
+
 .navbar-nav > li > a {
   color: #F5F5F5 !important;
 }
@@ -109,7 +114,6 @@ pre {
   -webkit-box-shadow: inset 0px -5px 0px 0px #F5F5F5;
   -moz-box-shadow: inset 0px 50px 0px 0px #F5F5F5;
   box-shadow: inset 0px -5px 0px 0px #F5F5F5;
-  transition: all .15s ease-in-out;
   background-color: transparent;
 }
 
