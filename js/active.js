@@ -13,7 +13,7 @@ while (i != $('a').length) {
   i++
 }
 
-$('.navbar-brand').click(function(event) {
-  // stop the click on the link adding a # to the end of the
-  event.preventDefault();
-});
+$.getScript("js/waves.js", function() {
+  Waves.attach('a');
+  Waves.init();
+})
