@@ -90,7 +90,7 @@ $(document).ready(function() {
     var website = '//www.lolking.net/summoner/euw/' + id;
 
     // Appending user data
-    $('.header').append('<div class="hb-cover" style="background-position: top; background-image: url(img/kata.jpg)">');
+    $('.header').append('<div class="hb-cover" style="background-position: top; background-image: url(img/project.jpg)">');
     $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><div class="hb-avatar" style="background-image: url(//lkimg.zamimg.com/shared/riot/images/profile_icons/profileIcon' +
       profileIconId + '.jpg)"></div></div><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 icon-col text-right"><div class="hb-avatar tier-icon"></div></div>')
     $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hb-username"><a target="_blank" href="' + website + '">' + name +

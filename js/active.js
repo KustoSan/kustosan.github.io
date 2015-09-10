@@ -13,7 +13,5 @@ while (i != $('a').length) {
   i++
 }
 
-$.getScript("js/waves.js", function() {
-  Waves.attach('a');
-  Waves.init();
-})
+Waves.attach('a');
+Waves.init();
