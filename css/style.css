@@ -390,6 +390,11 @@ span.resolution {
   margin-top: 75px;
 }
 
+.container-alert-error {
+  margin-top: 65px;
+  margin-bottom: -55px;
+}
+
 .thumbnail {
   padding: 0;
   overflow: hidden;

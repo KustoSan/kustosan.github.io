@@ -158,8 +158,6 @@ $(document).ready(function() {
 
       if (data.query.results == null) {} else if (data.query.results.error) {} else {
 
-        $('.container-error').removeClass('container-error');
-
         // Set current user to input text
         $('#usersearch').val(data.query.results.json.name);
 
@@ -198,6 +196,9 @@ $(document).ready(function() {
           data.query.results.json.waifu_slug + '" target="_blank">' + data.query.results.json.waifu + '</a></p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.query.results.json.location + '</p></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><hr><p><i class="fa fa-eye fa-fw watched"></i> ' + "I've watched " + timeSpent + ' of anime</p></div></div>');
+
+        $('.container-error').removeClass('container-error');
+        $('.container-alert').removeClass('container-alert-error');
       }
     })
 
@@ -210,8 +211,11 @@ $(document).ready(function() {
       $('#hb-library').html('');
 
       if (library.query.results == null) {
-        $('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px; width: 100%;"></diV>')
-      } else if (library.query.results.error) {$('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px; width: 100%;"></diV>')} else {
+        $('#hb-library').append('<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"><h4><i class="fa fa-warning"></i> Oops, something went wrong...</h4>')
+      } else if (library.query.results.error) {$('#hb-library').append('<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6"><h4><i class="fa fa-warning"></i> Oops, something went wrong...</h4>')} else {
+
+        $('#hb-library').css('min-height', '390px')
+
 
         // Sorting library
         library = library.query.results.json.json.sort(compare)
@@ -259,10 +263,6 @@ $(document).ready(function() {
             data.anime.title + '</h4><p>' + statusText + '</p><p>' + diffDays[0] + ' ago</p></div></div></div>');
         })
       }
-    })
-
-    .success(function() {
-      $('#hb-library').css('min-height', '390px')
     })
 
     // Error message on ajax error
