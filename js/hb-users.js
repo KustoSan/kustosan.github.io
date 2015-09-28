@@ -92,11 +92,13 @@ $('#animesearch').keyup(function() {
 
   searchText = this.value.toLowerCase();
   $('#hb-library > div').hide().addClass('404');
+
   $('#hb-library > div[title*="' + searchText + '"]').show().removeClass('404');
   $('#hb-library > div[alt-title*="' + searchText + '"]').show().removeClass('404');
-  $('#hb-library > div[title*="' + searchText + '"] > .thumbnail a .lazy').lazyload()
-  $('#hb-library > div[alt-title*="' + searchText + '"] > .thumbnail a .lazy').lazyload()
 
+  // Trick to load without calling lazyload function
+  $(window).scrollTop($(window).scrollTop() - 1);
+  $(window).scrollTop($(window).scrollTop() + 1);
 
   if (searchText == '') {
     $('#hb-library > div').show().removeClass('404');
@@ -148,68 +150,76 @@ $(document).ready(function() {
       user = "Kusto";
     }
 
-    $.jsonp({
-      url: 'http://hummingbird.me/api/v1/users/' + user + '?callback=?', // any JSON endpoint
-      success: function(data) {
+
+    $.getJSON("http://query.yahooapis.com/v1/public/yql", {
+      q: 'select * from json where url=\"http://hummingbird.me/api/v1/users/' + user + '"',
+      format: "json"
+    }, function(data) {
+
+      if (data.query.results == null) {} else if (data.query.results.error) {} else {
 
         $('.container-error').removeClass('container-error');
 
         // Set current user to input text
-        $('#usersearch').val(data.name);
+        $('#usersearch').val(data.query.results.json.name);
 
         // If user info is not set
-        if (data.waifu == null || "") {
-          data.waifu = "Kusto"
+        if (data.query.results.json.waifu == null || "") {
+          data.query.results.json.waifu = "Kusto"
         }
-        if (data.location == null || "") {
-          data.location = "Kusto's bed";
+        if (data.query.results.json.location == null || "") {
+          data.query.results.json.location = "Kusto's bed";
         }
-        if (data.website == null || "") {
-          data.website = "hummingbird.me/users/" + data.name;
+        if (data.query.results.json.website == null || "") {
+          data.query.results.json.website = "hummingbird.me/users/" + data.query.results.json.name;
         }
-        if (data.avatar == "/assets/processing-avatar.jpg") {
-          data.avatar = "//hummingbird.me/assets/processing-avatar.jpg";
+        if (data.query.results.json.avatar == "/assets/processing-avatar.jpg") {
+          data.query.results.json.avatar = "//hummingbird.me/assets/processing-avatar.jpg";
         }
-        if (data.bio == '') {
-          data.bio = "This user loves kusto."
+        if (data.query.results.json.bio == '') {
+          data.query.results.json.bio = "This user loves kusto."
         }
 
         // Set life spent on anime
-        var timeSpent = lifeSpent(data.life_spent_on_anime);
+        var timeSpent = lifeSpent(data.query.results.json.life_spent_on_anime);
 
         // Auto detect user websites urls
-        var website = Autolinker.link(data.website).split('</a>').join('</a> •').split(/•$/).join('');
-        var bio = data.bio.split('\u2003').join(' ');
+        var website = Autolinker.link(data.query.results.json.website).split('</a>').join('</a> •').split(/•$/).join('');
+        var bio = data.query.results.json.bio.split('\u2003').join(' ');
 
         // Appending user data
-        $('#library-title').html(data.name + "'s " + libraryStatus.toLowerCase() + " anime library");
-        $('.header').append('<div class="hb-cover" style="background-image: url(' + data.cover_image + ')">');
-        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><div class="hb-avatar" style="background-image: url(' + "'" + data.avatar + "'" + ')"></div></div></div>')
+        $('#library-title').html(data.query.results.json.name + "'s " + libraryStatus.toLowerCase() + " anime library");
+        $('.header').append('<div class="hb-cover" style="background-image: url(' + data.query.results.json.cover_image + ')">');
+        $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><div class="hb-avatar" style="background-image: url(' + "'" + data.query.results.json.avatar + "'" + ')"></div></div></div>')
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' +
-          data.name + '"' + '>' + data.name + '</a></div></div>');
+          data.query.results.json.name + '"' + '>' + data.query.results.json.name + '</a></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><p class="hb-website">' + website + '</p></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i> <a href="//hummingbird.me/anime/' +
-          data.waifu_slug + '" target="_blank">' + data.waifu + '</a></p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.location + '</p></div></div>');
+          data.query.results.json.waifu_slug + '" target="_blank">' + data.query.results.json.waifu + '</a></p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.query.results.json.location + '</p></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
         $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><hr><p><i class="fa fa-eye fa-fw watched"></i> ' + "I've watched " + timeSpent + ' of anime</p></div></div>');
       }
     })
 
-    $.jsonp({
-      url: 'http://hummingbird.me/api/v1/users/' + user + '/library?status=' + status, // any JSON endpoint
-      success: function(library) {
+    $.getJSON("http://query.yahooapis.com/v1/public/yql", {
+      q: 'select * from json where url=\"http://hummingbird.me/api/v1/users/' + user + '/library?status=' + status + '"',
+      format: "json"
+    }, function(library) {
 
-        // Message is library is empty
-        $('#hb-library').html('');
-        if (jQuery.isEmptyObject(library)) {
-          $('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px; width: 100%;"></diV>')
-        }
+      // Message in library is empty
+      $('#hb-library').html('');
+
+      if (library.query.results == null) {
+        $('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px; width: 100%;"></diV>')
+      } else if (library.query.results.error) {$('#hb-library').append('<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10"><img class="not-found" src="img/not-found.png" style="position: relative; top: 20px; width: 100%;"></diV>')} else {
 
         // Sorting library
-        library = library.sort(compare)
+        library = library.query.results.json.json.sort(compare)
+
         jQuery.each(library, function(i, data) {
 
           // Setting library anime info
+
           if (data.anime.episode_count == null) {
             data.anime.episode_count = "?";
           }
