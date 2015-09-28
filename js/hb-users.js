@@ -151,8 +151,8 @@ $(document).ready(function() {
     }
 
 
-    $.getJSON("http://query.yahooapis.com/v1/public/yql", {
-      q: 'select * from json where url=\"http://hummingbird.me/api/v1/users/' + user + '"',
+    $.getJSON("https://query.yahooapis.com/v1/public/yql", {
+      q: 'select * from json where url=\"https://hummingbird.me/api/v1/users/' + user + '"',
       format: "json"
     }, function(data) {
 
@@ -201,8 +201,8 @@ $(document).ready(function() {
       }
     })
 
-    $.getJSON("http://query.yahooapis.com/v1/public/yql", {
-      q: 'select * from json where url=\"http://hummingbird.me/api/v1/users/' + user + '/library?status=' + status + '"',
+    $.getJSON("https://query.yahooapis.com/v1/public/yql", {
+      q: 'select * from json where url=\"https://hummingbird.me/api/v1/users/' + user + '/library?status=' + status + '"',
       format: "json"
     }, function(library) {
 
