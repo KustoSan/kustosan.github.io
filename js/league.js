@@ -172,7 +172,6 @@ $(document).ready(function() {
 
     // Matches
     $.getJSON('https://euw.api.pvp.net/api/lol/euw/v1.3/game/by-summoner/' + id + '/recent?api_key=' + key, function(data) {
-      console.log(data)
       jQuery.each(data.games, function(i, match) {
 
         if (this.stats.win == true) {
@@ -185,7 +184,11 @@ $(document).ready(function() {
 
         champId = this.championId;
         gameId = this.gameId;
-        playerMatchId = this.fellowPlayers[0].summonerId;
+        if (this.fellowPlayers) {
+          playerMatchId = this.fellowPlayers[0].summonerId;
+        } else {
+          playerMatchId = '0'
+        }
         spell1 = this.spell1;
         spell2 = this.spell2;
 
