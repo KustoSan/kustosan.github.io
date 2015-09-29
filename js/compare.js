@@ -26,10 +26,7 @@ $(document).ready(function() {
 
     do {
       // Get follow json
-      $.jsonp({
-        url: 'https://hummingbird.me/users?callback=?&followed_by=' + user + '&page=' + page, // any JSON endpoint
-        jsonpSupport: true, // if URL above supports JSONP (optional)
-        success: function(data) {
+      $.getJSON('https://okoru-json.herokuapp.com/following.php?user=' + user + '&page=' + page, function(data) {
 
           // Get each follower compatibility
           jQuery.each(data.users, function(a, val) {
@@ -44,31 +41,32 @@ $(document).ready(function() {
               for (var i = 0; i <= $('.countTd').length; i++) {
                 $('.countTd:eq(' + i + ')').html('#' + (i + 1));
               };
+
             })
           })
         }
       });
-      page++
-    }
-    while (page != "100")
+    page++
   }
+  while (page != "100")
+}
 
-  $("#exportTxt").click(function() {
-    text = "";
-    for (var i = 0; i <= $('.countTd').length; i++) {
-      namu = $('.countNamu a:eq(' + i + ')').html();
-      percent = $('.countPercent:eq(' + i + ')').html();
-      pretext = (i + 1) + ': ' + namu + " - " + percent;
-      text = text + '\n' + pretext;
+$("#exportTxt").click(function() {
+  text = "";
+  for (var i = 0; i <= $('.countTd').length; i++) {
+    namu = $('.countNamu a:eq(' + i + ')').html();
+    percent = $('.countPercent:eq(' + i + ')').html();
+    pretext = (i + 1) + ': ' + namu + " - " + percent;
+    text = text + '\n' + pretext;
 
-      if (i == ($('.countTd').length - 1)) {
-        var blob = new Blob([text], {
-          type: "text/plain;charset=utf-8;",
-        });
-        saveAs(blob, user + " Followed.txt");
-      }
+    if (i == ($('.countTd').length - 1)) {
+      var blob = new Blob([text], {
+        type: "text/plain;charset=utf-8;",
+      });
+      saveAs(blob, user + " Followed.txt");
     }
-  })
+  }
+})
 
 });
 
