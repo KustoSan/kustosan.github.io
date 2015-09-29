@@ -28,45 +28,44 @@ $(document).ready(function() {
       // Get follow json
       $.getJSON('https://okoru-json.herokuapp.com/following.php?user=' + user + '&page=' + page, function(data) {
 
-          // Get each follower compatibility
-          jQuery.each(data.users, function(a, val) {
+        // Get each follower compatibility
+        jQuery.each(data.users, function(a, val) {
 
-            $.getJSON('https://hbird-cmp-node.herokuapp.com/compatibility/anime?user1=' + user + '&user2=' + val.id + '&callback=asd', function(data) {
+          $.getJSON('https://hbird-cmp-node.herokuapp.com/compatibility/anime?user1=' + user + '&user2=' + val.id + '&callback=asd', function(data) {
 
-              $('#members').append('<tr class="ded"><td class="countTd"><b></b></td><td class="countNamu"><a style="color:#428bca;" href="https://hummingbird.me/users/' +
-                val.id + '" target="_blank">' + val.id + '</a></td><td class="countPercent">' + data.percent + '</td><td>Stalked</td></tr>');
-              $('th').removeAttr("data-sorted");
-              $('th').removeAttr("data-sorted-direction");
-              Sortable.init();
-              for (var i = 0; i <= $('.countTd').length; i++) {
-                $('.countTd:eq(' + i + ')').html('#' + (i + 1));
-              };
+            $('#members').append('<tr class="ded"><td class="countTd"><b></b></td><td class="countNamu"><a style="color:#428bca;" href="https://hummingbird.me/users/' +
+              val.id + '" target="_blank">' + val.id + '</a></td><td class="countPercent">' + data.percent + '</td><td>Stalked</td></tr>');
+            $('th').removeAttr("data-sorted");
+            $('th').removeAttr("data-sorted-direction");
+            Sortable.init();
+            for (var i = 0; i <= $('.countTd').length; i++) {
+              $('.countTd:eq(' + i + ')').html('#' + (i + 1));
+            };
 
-            })
           })
-        }
+        })
       });
-    page++
-  }
-  while (page != "100")
-}
-
-$("#exportTxt").click(function() {
-  text = "";
-  for (var i = 0; i <= $('.countTd').length; i++) {
-    namu = $('.countNamu a:eq(' + i + ')').html();
-    percent = $('.countPercent:eq(' + i + ')').html();
-    pretext = (i + 1) + ': ' + namu + " - " + percent;
-    text = text + '\n' + pretext;
-
-    if (i == ($('.countTd').length - 1)) {
-      var blob = new Blob([text], {
-        type: "text/plain;charset=utf-8;",
-      });
-      saveAs(blob, user + " Followed.txt");
+      page++
     }
+    while (page != "100")
   }
-})
+
+  $("#exportTxt").click(function() {
+    text = "";
+    for (var i = 0; i <= $('.countTd').length; i++) {
+      namu = $('.countNamu a:eq(' + i + ')').html();
+      percent = $('.countPercent:eq(' + i + ')').html();
+      pretext = (i + 1) + ': ' + namu + " - " + percent;
+      text = text + '\n' + pretext;
+
+      if (i == ($('.countTd').length - 1)) {
+        var blob = new Blob([text], {
+          type: "text/plain;charset=utf-8;",
+        });
+        saveAs(blob, user + " Followed.txt");
+      }
+    }
+  })
 
 });
 
