@@ -201,7 +201,7 @@ $(document).ready(function() {
       $('.container-alert').removeClass('container-alert-error');
     })
 
-    $.getJSON(devJson + 'hblibrary.php?user=' + user + '&status=' + status, function(library) {
+    $.getJSON(okoruJson + 'hblibrary.php?user=' + user + '&status=' + status, function(library) {
 
       // Message in library is empty
       $('#hb-library').html('');
