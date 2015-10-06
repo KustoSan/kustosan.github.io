@@ -1,0 +1,7 @@
+## Interface: 60100
+## Title: KustoAddon
+## Version: 0.2
+## Author: Kustosan
+## X-Website: http://www.kustosan.github.io
+## SavedVariablesPerCharacter: MasterPlanPC
+KustoAddon.lua
