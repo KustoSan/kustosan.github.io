@@ -2,5 +2,5 @@
 ## Title: KustoAddon
 ## Version: 0.2
 ## Author: Kustosan
-## X-Website: http://www.kustosan.github.io
+## X-Website: https://github.com/KustoSan/kustosan.github.io/tree/master/addons
 KustoAddon.lua
