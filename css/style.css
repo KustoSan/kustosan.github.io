@@ -43,6 +43,15 @@ pre {
   border: 1px solid rgba(0, 0, 0, .2);
 }
 
+.dropdown-menu>li>a:hover {
+  color: #C2185B;
+  background-color: inherit;
+}
+
+.dropdown-menu {
+    border: none;
+}
+
 .table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
   content: " \25B4\25BE"
 }
@@ -108,7 +117,9 @@ pre {
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover {
-  background-color: #E57373;
+  box-shadow: inset 5px 0px 0px 0px #C2185B;
+  color: #C2185B;
+  background-color: transparent;
 }
 
 .navbar-nav > li:hover, .open {

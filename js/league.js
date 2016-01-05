@@ -75,8 +75,7 @@ $(document).ready(function() {
     var summoner = summoner.split('+').join('');
   }
 
-  var _0x589c=["\x66\x63\x63\x61\x38\x63\x30\x61\x2D\x33\x32\x32\x35\x2D\x34\x36\x31\x63\x2D\x61\x37\x34\x35\x2D\x32\x33\x38\x66\x61\x35\x32\x38\x61\x61\x65\x32"];
-  var key=_0x589c[0];
+  var key
 
   $.getJSON('https://euw.api.pvp.net/api/lol/euw/v1.4/summoner/by-name/' + summoner + '?api_key=' + key, function(data) {
 
