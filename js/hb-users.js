@@ -162,6 +162,9 @@ $(document).ready(function() {
       $('#usersearch').val(data.name);
 
       // If user info is not set
+      if (data.waifu_or_husbando == null || "") {
+        data.waifu_or_husbando = "Waifu"
+      }
       if (data.waifu == null || "") {
         data.waifu = "Kusto"
       }
@@ -192,9 +195,9 @@ $(document).ready(function() {
       $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 hb-username"><a target="_blank" href=' + '"' + '//hummingbird.me/users/' +
         data.name + '"' + '>' + data.name + '</a></div></div>');
       $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"><p class="hb-website">' + website + '</p></div></div>');
-      $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i> <a href="//hummingbird.me/anime/' +
-        data.waifu_slug + '" target="_blank">' + data.waifu + '</a></p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> ' + data.location + '</p></div></div>');
       $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><p>' + bio + '</p></div></div>');
+      $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 waifu-location"><p class="hb-waifu-husbando"><i class="fa fa-heart fa-fw waifu"></i> <a href="//hummingbird.me/anime/' +
+        data.waifu_slug + '" target="_blank">' + data.waifu_or_husbando + ' is ' + data.waifu + '</a></p><p class="hb-location"><i class="fa fa-map-marker fa-fw home"></i> Lives in ' + data.location + '</p></div></div>');
       $('.user-info').append('<div class="row hb-row"><div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hb-bio"><hr><p><i class="fa fa-eye fa-fw watched"></i> ' + "I've watched " + timeSpent + ' of anime</p></div></div>');
 
       $('.container-error').removeClass('container-error');
