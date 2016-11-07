@@ -1,2 +1,1 @@
 # kustosan.github.io
-> Nyaa~!
